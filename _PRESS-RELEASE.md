@@ -19,6 +19,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > JOBStack
   StageTracker
+  JobSurf
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
@@ -37,7 +38,7 @@ Get phone call and have no idea anything about the company etc.
   > List of companies you are interested in. Each company is broken down into different stages of your job hunt. Also, shows relevant information about each company.
 
 ## Quote from You ##
-  > 
+  > Never leave your After years of blood, sweat, and tears, we've broken down the interview process into it's key elements and automated the process.
 
 ## How to Get Started ##
   > You can get started right away, no need to log-in! Add companies you're interested in, apply and sign-up, and the app takes care of the rest for you!
