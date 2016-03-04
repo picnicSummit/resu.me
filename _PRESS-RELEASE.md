@@ -18,28 +18,32 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > JOBStack
+  StageTracker
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
   
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Track the stage you're at in your interview process among multiple companies. 
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Interviewing with a lot of different companies:
+How do you keep track of everything? 
+What stage am I at? 
+Get phone call and have no idea anything about the company etc.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > List of companies you are interested in. Each company is broken down into different stages of your job hunt. Also, shows relevant information about each company.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > 
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > You can get started right away, no need to log-in! Add companies you're interested in, apply and sign-up, and the app takes care of the rest for you!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > Frazzled Job-seeker: "Best interview tool I've ever used! I was able to juggle multiple offers from different companies all without losing my mind."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Don't worry about your job hunt troubles again, start adding companies now.
