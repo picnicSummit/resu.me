@@ -1,0 +1,55 @@
+.login {
+  float: right;
+  margin-right: 40px;
+}
+
+body > header {
+  background-color: blue;
+  color: white;
+  padding: 12px;
+}
+
+/* trick to align inline-blocks */
+body > header > * {
+  vertical-align: middle;
+}
+
+body > header img {
+  display: inline-block;
+  height: 200px;
+}
+
+body > header .textblock {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.textblock .centered {
+  text-align: center;
+}
+
+.textblock .tagline {
+  margin-top: 20px;
+}
+
+body > header button {
+  margin-top: 20px;  
+}
+
+.issue {
+  max-width: 360px;
+  border: 2px solid green;
+  border-radius: 4px;
+}
+
+.issue > header, .issue > footer {
+  background-color: green;
+  color: white;
+  padding: 4px;
+}
+
+.issue > .content {
+  background-color: lightblue;
+  padding: 8px;
+  height: 200px;
+}

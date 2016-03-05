@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Nic-Con 2016</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/issueFactory.js"></script>
+    <script src="js/controllers/issues-controller.js"></script>
+  </head>
+  
+  <body ng-app='app'>
+  
+    <header>
+      <div class="login">login</div>
+      <img src="images/nic.jpeg">
+      <div class="textblock">
+        <h1 class="centered">Nic-Con 2016</h1>
+        <p class="centered">Completely new &amp; updated</p>
+        <button class="btn btn-success center-block">Get Started</button>
+        <p class="centered tagline">You don't pay unless ALL your problems GO AWAY!</p>
+      </div>
+    </header>
+  
+    <div ng-controller="IssuesController">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="issue in issues">
+
+          <div class="issue">
+            <header>
+              {{issue.title}}
+              <img/>
+            </header>
+            <div class="content">
+              {{issue.description}}
+            </div>
+            <footer>
+              {{issue.bid | currency }}{{ issue.hourly ? " / hr." : " ( fixed price )" }} 
+            </footer>
+        </li>
+      </ul>
+    </div>
+
+  
+  </body>
+</html>
