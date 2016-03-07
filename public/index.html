@@ -8,8 +8,8 @@
     <link href="styles/styles.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/services/issueFactory.js"></script>
-    <script src="js/controllers/issues-controller.js"></script>
+    <script src="js/services/company-factory.js"></script>
+    <script src="js/controllers/companies-controller.js"></script>
   </head>
   
   <body ng-app='app'>
@@ -25,7 +25,7 @@
       </div>
     </header>
   
-    <div ng-controller="IssuesController">
+    <div ng-controller="CompaniesController">
       <ul>
         <li ng-repeat="company in companies">
           {{company.name}}
