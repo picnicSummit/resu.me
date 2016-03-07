@@ -1,17 +1,11 @@
 angular.module('app')
-  .controller( 'CompanyController', [ '$scope', 'CompanyFactory', function( $scope, CompanyFactory ) {
+  .controller( 'CompanyController', ['$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
 
-    $scope.company = {};
+    $scope.company;
 
-    $scope.getData = function (name) {
-      console.log(name);
-      CompanyFactory.getCompany(name)
-        .then( function(data) {
-          $scope.company = data;
-        })
-        .catch( function(error) {
-          console.error(error);
-        });
-    };
+    $rootScope.$on('showCompany', function(event, data) {
+      console.log(data[0].name);
+      $scope.company = data[0].name;
+    });
 
   }]);
