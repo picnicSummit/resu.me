@@ -2,7 +2,8 @@
 
 module.exports = [
   {
-    'name' : 'Company A'
+    'name' : 'Company A',
+    'id' : 1
   },
 
   {

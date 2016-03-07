@@ -58,11 +58,12 @@ app.get( '/api/companies', function( req, res ) {
 });
 
 app.get('/api/companies/:name', function(req, res) {
-
+  
   var name = req.params.name;
   Company.find( {name: name }, function(error, company) {
-
+    console.log('company', company);
     if (error) {
+    console.log('error', error);
       res.json(error);
     } else if ( company === null ) {
       res.json('Empty data');

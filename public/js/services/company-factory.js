@@ -1,5 +1,9 @@
 angular.module('app')
-  .factory( 'CompanyFactory', [ '$http', function($http) {
+  .factory( 'CompanyFactory', ['$rootScope', '$http', function($rootScope, $http) {
+
+    var companyData = {
+      data: 'There'
+    };
 
     var getAll = function() {
 
@@ -22,7 +26,7 @@ angular.module('app')
         url: '/api/companies/' + name
       })
       .then( function (resp) {
-        return resp.data;
+        $rootScope.$emit('showCompany', resp.data);
       })
       .catch( function(err) {
         console.log( 'CompanyFactory error:', err );
@@ -32,7 +36,8 @@ angular.module('app')
 
     return {
       getAll: getAll,
-      getCompany: getCompany
+      getCompany: getCompany,
+      companyData: companyData
     };
 
   }]);
