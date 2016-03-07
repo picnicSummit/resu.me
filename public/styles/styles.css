@@ -1,3 +1,7 @@
+/********************************
+  Shared Elements (in all views)
+*********************************/
+
 html {
   font-family: sans-serif;
 }
@@ -8,7 +12,7 @@ html {
   margin-top: 20px;
   color: rgba(255,255,255,0.6);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 1.25px;
 }
 
@@ -23,7 +27,6 @@ header {
   background-color: blue;
   color: rgba(255,255,255,0.6);
   height: 400px;
-  padding: 42px 20px;
 }
 
 header.narrow-header {
@@ -36,6 +39,7 @@ header.narrow-header {
 }
 
 .main-title {
+  margin-top: 80px;
   color: lightblue;
   text-transform: uppercase;
   font-size: 42px;
@@ -44,7 +48,27 @@ header.narrow-header {
 }
 
 .narrow-header .main-title {
+  margin-top: 12px;
   font-size: 24px;
+}
+
+
+/********************************
+     Landing Page Elements
+*********************************/
+
+/* enable columns */
+.primary-header-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.title-block-column {
+}
+
+.description-column {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .sub-title {
@@ -63,13 +87,55 @@ header.narrow-header {
 }
 
 .description {
-  position: fixed;
-  width: 300px;
-  top: 40px;
-  right: 48px;
-  background-color: rgba(0,0,0,0.5);
-  font-size: 20px;
+  /*background-color: rgba(0,0,0,0.5);*/
+  margin-top: 40px;
+  width: 200px;
+  font-size: 14px;
+  border: 1px solid white;
   border-radius: 6px;
-  padding: 16px;
+  padding: 12px;
 }
 
+.description > span {
+}
+
+.description > ul {
+  padding: 0 0 0 20px;
+  margin: 5px 0;
+  color: white;
+}
+
+.promo-band {
+  min-height: 360px;
+  margin: 42px 0;
+  padding: 12px;
+}
+
+.video-frame {
+  background-color: black;
+  border-radius: 5px;
+  width: 380px;
+  height: 280px;
+  padding: 22px 10px;
+}
+
+.demo {
+  background-color: lightblue;
+}
+
+.subject2 {
+  background-color: lightgreen;
+}
+
+.subject3 {
+  background-color: lightblue;
+}
+
+.subject4 {
+  background-color: lightgreen;
+}
+
+
+/********************************
+  Some Other Page Elements...
+*********************************/
