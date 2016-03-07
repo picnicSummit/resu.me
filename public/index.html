@@ -3,7 +3,7 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Nic-Con 2016</title>
+    <title>Job Hunt</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
@@ -13,33 +13,22 @@
   </head>
   
   <body ng-app='app'>
-  
+
     <header>
-      <div class="login">login</div>
-      <img src="images/nic.jpeg">
-      <div class="textblock">
-        <h1 class="centered">Nic-Con 2016</h1>
-        <p class="centered">Completely new &amp; updated</p>
-        <button class="btn btn-success center-block">Get Started</button>
-        <p class="centered tagline">You don't pay unless ALL your problems GO AWAY!</p>
+      <div class="title-block">
+        <h1 class="main-title">Job Hunt</h1>
+        <h3 class="sub-title">Find Your Dream Company</h3>
+        <button class="btn btn-lg btn-success center-block">Start The Hunt!</button>
+      </div>
+      <div class="description">
+        <p>Manage interviews with DOZENS of hot companies. Conduct research, manage contacts, schedule interviews... and always Know exactly WHAT STAGE YOU'RE AT in the interview Process</p>
       </div>
     </header>
   
     <div ng-controller="IssuesController">
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="issue in issues">
-
-          <div class="issue">
-            <header>
-              {{issue.title}}
-              <img/>
-            </header>
-            <div class="content">
-              {{issue.description}}
-            </div>
-            <footer>
-              {{issue.bid | currency }}{{ issue.hourly ? " / hr." : " ( fixed price )" }} 
-            </footer>
+      <ul>
+        <li ng-repeat="company in companies">
+          {{company.name}}
         </li>
       </ul>
     </div>
