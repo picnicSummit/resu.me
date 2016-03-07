@@ -1,3 +1,7 @@
+/********************************
+  Shared Elements (in all views)
+*********************************/
+
 html {
   font-family: sans-serif;
 }
@@ -8,7 +12,7 @@ html {
   margin-top: 20px;
   color: rgba(255,255,255,0.6);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 1.25px;
 }
 
@@ -48,6 +52,25 @@ header.narrow-header {
   font-size: 24px;
 }
 
+
+/********************************
+     Landing Page Elements
+*********************************/
+
+/* enable columns */
+.primary-header-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.title-block-column {
+}
+
+.description-column {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .sub-title {
   font-style: italic;
   font-weight: bold;
@@ -64,12 +87,22 @@ header.narrow-header {
 }
 
 .description {
-  background-color: rgba(0,0,0,0.5);
-  font-size: 18px;
+  /*background-color: rgba(0,0,0,0.5);*/
+  margin-top: 40px;
+  width: 200px;
+  font-size: 14px;
+  border: 1px solid white;
   border-radius: 6px;
   padding: 12px;
-  width: 240px;
-  margin: 0 auto;
+}
+
+.description > span {
+}
+
+.description > ul {
+  padding: 0 0 0 20px;
+  margin: 5px 0;
+  color: white;
 }
 
 .promo-band {
@@ -102,3 +135,7 @@ header.narrow-header {
   background-color: lightgreen;
 }
 
+
+/********************************
+  Some Other Page Elements...
+*********************************/
