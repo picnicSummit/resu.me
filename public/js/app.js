@@ -13,7 +13,17 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
         
     .state('companies', {
       url: '/companies',
-      templateUrl: '../views/companies.html'      
+      views: {
+        '': { templateUrl: '../views/companies.html' },
+        'companyList@companies': {
+          templateUrl: '../views/company-list.html',
+          controller: 'CompaniesController'
+        },
+        'companyView@companies': {
+          templateUrl: '../views/company-individual.html',
+          controller: 'CompanyController'
+        }
+      }    
     });
         
 });
