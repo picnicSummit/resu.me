@@ -1,55 +1,54 @@
+html {
+  font-family: sans-serif;
+}
+
 .login {
   float: right;
   margin-right: 40px;
 }
 
-body > header {
+header {
   background-color: blue;
-  color: white;
-  padding: 12px;
+  color: rgba(255,255,255,0.6);
+  height: 400px;
+  padding: 42px 20px;
 }
 
-/* trick to align inline-blocks */
-body > header > * {
-  vertical-align: middle;
-}
-
-body > header img {
-  display: inline-block;
-  height: 200px;
-}
-
-body > header .textblock {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.textblock .centered {
+.title-block {
   text-align: center;
 }
 
-.textblock .tagline {
-  margin-top: 20px;
+.main-title {
+  color: lightblue;
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: bold;
+  letter-spacing: 1.25px;
 }
 
-body > header button {
-  margin-top: 20px;  
+.sub-title {
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 1.25px;
 }
 
-.issue {
-  max-width: 360px;
-  border: 2px solid green;
-  border-radius: 4px;
+.btn {
+  margin-top: 80px;
+  color: indigo;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+  padding: 10px 50px;
 }
 
-.issue > header, .issue > footer {
-  background-color: green;
-  color: white;
-  padding: 4px;
+.description {
+  position: fixed;
+  width: 300px;
+  top: 40px;
+  right: 48px;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 20px;
+  border-radius: 6px;
+  padding: 16px;
 }
 
-.issue > .content {
-  background-color: lightblue;
-  padding: 8px;
-  height: 200px;
-}
