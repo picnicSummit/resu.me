@@ -2,9 +2,21 @@ html {
   font-family: sans-serif;
 }
 
-.login {
+.log-in-out {
   float: right;
-  margin-right: 40px;
+  margin-right: 32px;
+  margin-top: 20px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+}
+
+.login {
+}
+
+.logout {
+  display: none;
 }
 
 header {
