@@ -1,5 +1,5 @@
 angular.module('app')
-  .factory( 'issueFactory', [ '$http', function($http) {
+  .factory( 'CompanyFactory', [ '$http', function($http) {
 
     var getAll = function() {
 
@@ -11,7 +11,7 @@ angular.module('app')
         return resp.data;
       })
       .catch( function(err) {
-        console.log( 'issueFactory error:', err );
+        console.log( 'CompanyFactory error:', err );
       });
 
     };

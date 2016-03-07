@@ -11,5 +11,9 @@ module.exports = [
 
   {
     'name' : 'Company C'
+  },
+
+  {
+    'name' : 'Company D'
   }
 ];

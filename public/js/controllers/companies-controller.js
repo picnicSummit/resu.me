@@ -1,11 +1,11 @@
 angular.module('app')
-  .controller( "IssuesController", [ '$scope', 'issueFactory', function( $scope, issueFactory ) {
+  .controller( 'CompaniesController', [ '$scope', 'CompanyFactory', function( $scope, CompanyFactory ) {
 
     $scope.companies = {};
 
     $scope.getData = function () {
 
-      issueFactory.getAll()
+      CompanyFactory.getAll()
         .then( function(data) {
           $scope.companies = data;
         })
