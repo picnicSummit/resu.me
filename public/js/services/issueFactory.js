@@ -5,19 +5,19 @@ angular.module('app')
 
       return $http({
         method: 'GET',
-        url: '/api/issues'
+        url: '/api/companies'
       })
       .then( function (resp) {
         return resp.data;
       })
       .catch( function(err) {
-        console.log( "issueFactory error:", err );
+        console.log( 'issueFactory error:', err );
       });
 
     };
 
     return {
       getAll: getAll
-    }
+    };
 
   }]);
