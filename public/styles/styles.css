@@ -73,3 +73,33 @@ header.narrow-header {
   padding: 16px;
 }
 
+.promo-band {
+  min-height: 360px;
+  margin: 42px 0;
+  padding: 12px;
+}
+
+.video-frame {
+  background-color: black;
+  border-radius: 5px;
+  width: 380px;
+  height: 280px;
+  padding: 22px 10px;
+}
+
+.demo {
+  background-color: lightblue;
+}
+
+.subject2 {
+  background-color: lightgreen;
+}
+
+.subject3 {
+  background-color: lightblue;
+}
+
+.subject4 {
+  background-color: lightgreen;
+}
+
