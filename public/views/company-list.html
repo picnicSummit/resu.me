@@ -1,7 +1,3 @@
-<div>
-  <ul>
-    <li ng-repeat="company in companies">
-      {{company.name}}
-    </li>
-  </ul>
-</div>
+<ul ng-repeat="company in companies">
+    <button ng-click="getData(company.name)">{{company.name}}</button>
+</ul>

@@ -45,19 +45,32 @@ mongoose.connection.on( 'connected', function () {
 
 app.get( '/api/companies', function( req, res ) {
 
-  Company.find( {}, function(error, data) {
+  Company.find( {}, function(error, companies) {
 
     if ( error ) {
       res.json(error);
-    } else if ( data === null ) {
+    } else if ( companies === null ) {
       res.json('Empty data');
     } else {
-      res.json(data);
+      res.json(companies);
     }      
   });
-
 });
 
+app.get('/api/companies/:name', function(req, res) {
+
+  var name = req.params.name;
+  Company.find( {name: name }, function(error, company) {
+
+    if (error) {
+      res.json(error);
+    } else if ( company === null ) {
+      res.json('Empty data');
+    } else {
+      res.json(company);
+    }
+  });
+});
 
 
 
