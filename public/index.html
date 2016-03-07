@@ -7,12 +7,19 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services/company-factory.js"></script>
     <script src="js/controllers/companies-controller.js"></script>
   </head>
   
   <body ng-app='app'>
+
+    <!-- login/logout on EVERY page -->
+    <div class="log-in-out">
+        <a class="login" ui-sref="companies">login</a>
+        <a class="logout" ui-sref="home">logout</a>
+      </div>
 
     <header>
       <div class="title-block">
