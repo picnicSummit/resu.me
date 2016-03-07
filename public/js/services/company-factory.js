@@ -16,8 +16,23 @@ angular.module('app')
 
     };
 
+    var getCompany = function(name) {
+      return $http({
+        method: 'GET',
+        url: '/api/companies/' + name
+      })
+      .then( function (resp) {
+        return resp.data;
+      })
+      .catch( function(err) {
+        console.log( 'CompanyFactory error:', err );
+      });
+
+    };
+
     return {
-      getAll: getAll
+      getAll: getAll,
+      getCompany: getCompany
     };
 
   }]);
