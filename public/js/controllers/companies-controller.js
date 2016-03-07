@@ -3,7 +3,7 @@ angular.module('app')
 
     $scope.companies = {};
 
-    $scope.getData = function () {
+    $scope.getAll = function () {
 
       CompanyFactory.getAll()
         .then( function(data) {
@@ -14,6 +14,14 @@ angular.module('app')
         });
     };
 
-    $scope.getData();
+    $scope.getCompany = function(name) {
+
+      CompanyFactory.getCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
+    };
+
+    $scope.getAll();
 
   }]);
