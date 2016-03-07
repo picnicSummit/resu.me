@@ -23,7 +23,6 @@ header {
   background-color: blue;
   color: rgba(255,255,255,0.6);
   height: 400px;
-  padding: 42px 20px;
 }
 
 header.narrow-header {
@@ -36,6 +35,7 @@ header.narrow-header {
 }
 
 .main-title {
+  margin-top: 80px;
   color: lightblue;
   text-transform: uppercase;
   font-size: 42px;
@@ -44,6 +44,7 @@ header.narrow-header {
 }
 
 .narrow-header .main-title {
+  margin-top: 12px;
   font-size: 24px;
 }
 
@@ -63,14 +64,12 @@ header.narrow-header {
 }
 
 .description {
-  position: fixed;
-  width: 300px;
-  top: 40px;
-  right: 48px;
   background-color: rgba(0,0,0,0.5);
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 6px;
-  padding: 16px;
+  padding: 12px;
+  width: 240px;
+  margin: 0 auto;
 }
 
 .promo-band {
