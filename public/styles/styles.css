@@ -10,10 +10,18 @@ html {
   float: right;
   margin-right: 32px;
   margin-top: 20px;
-  color: rgba(255,255,255,0.6);
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1.25px;
+}
+
+.log-in-out a {
+  color: white;
+}
+
+.log-in-out a:hover {
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .login {
@@ -87,21 +95,23 @@ header.narrow-header {
 }
 
 .description {
-  /*background-color: rgba(0,0,0,0.5);*/
   margin-top: 40px;
   width: 200px;
   font-size: 14px;
+  text-align: center;
   border: 1px solid white;
   border-radius: 6px;
   padding: 12px;
 }
 
-.description > span {
+.description .where-you-stand {
+  color: white;
 }
 
 .description > ul {
+  text-align: left;
   padding: 0 0 0 20px;
-  margin: 5px 0;
+  margin: 10px 0;
   color: white;
 }
 
