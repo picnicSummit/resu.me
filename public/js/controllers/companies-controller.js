@@ -1,9 +1,9 @@
 angular.module('app')
-  .controller( 'CompaniesController', [ '$scope', 'CompanyFactory', function( $scope, CompanyFactory ) {
+  .controller( 'CompaniesController', [ '$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
 
     $scope.companies = {};
 
-    $scope.getData = function () {
+    $scope.getAll = function () {
 
       CompanyFactory.getAll()
         .then( function(data) {
@@ -14,6 +14,15 @@ angular.module('app')
         });
     };
 
-    $scope.getData();
+    $scope.getCompany = function(name) {
+      //console.log(name)// -- it worked
+      CompanyFactory.getCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
+
+    };
+
+    $scope.getAll();
 
   }]);
