@@ -1,0 +1,13 @@
+<header class="narrow-header">
+  <div class="title-block">
+    <h1 class="main-title">Job Hunt</h1>
+  </div>
+</header>
+  
+<div ng-controller="CompaniesController">
+  <ul>
+    <li ng-repeat="company in companies">
+      {{company.name}}
+    </li>
+  </ul>
+</div>

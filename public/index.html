@@ -7,32 +7,22 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/services/issueFactory.js"></script>
-    <script src="js/controllers/issues-controller.js"></script>
+    <script src="js/services/company-factory.js"></script>
+    <script src="js/controllers/companies-controller.js"></script>
   </head>
   
   <body ng-app='app'>
 
-    <header>
-      <div class="title-block">
-        <h1 class="main-title">Job Hunt</h1>
-        <h3 class="sub-title">Find Your Dream Company</h3>
-        <button class="btn btn-lg btn-success center-block">Start The Hunt!</button>
-      </div>
-      <div class="description">
-        <p>Manage interviews with DOZENS of hot companies. Conduct research, manage contacts, schedule interviews... and always Know exactly WHAT STAGE YOU'RE AT in the interview Process</p>
-      </div>
-    </header>
-  
-    <div ng-controller="IssuesController">
-      <ul>
-        <li ng-repeat="company in companies">
-          {{company.name}}
-        </li>
-      </ul>
+    <!-- login/logout on EVERY page -->
+    <div class="log-in-out">
+      <a class="login" ui-sref="companies">login</a>
+      <a class="logout" ui-sref="home">logout</a>
     </div>
 
+    <!-- inject main content -->
+    <div ui-view></div>
   
   </body>
 </html>
