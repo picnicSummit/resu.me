@@ -10,7 +10,7 @@ angular.module('app')
       $scope.company = data[0].name;
       for (var key in data[0]) {
         if (key !== 'company') {
-          
+          $scope.index.push()
         }
       }
     });
