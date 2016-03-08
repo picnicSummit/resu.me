@@ -69,9 +69,15 @@ html {
   color: indigo;
   font-style: italic;
   font-weight: bold;
+  font-size: 20px;
   letter-spacing: 1.25px;
-  text-align: center;
-  margin-top: 60px;
+  width: 200px; /* req'd, to horiz. center */
+  margin: 60px auto 0 auto;
+}
+
+.tagline .line2 {
+  margin-top: 10px;
+  margin-left: 32px;
 }
 
 .btn {
@@ -86,7 +92,7 @@ html {
 
 .description {
   color: indigo;
-  margin: 40px auto 0 auto;
+  margin: 32px auto 0 auto;
   width: 200px;
   font-size: 14px;
   text-align: center;
