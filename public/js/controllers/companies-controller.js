@@ -30,6 +30,13 @@ angular.module('app')
           console.error(error);
         });
     };
+
+    $scope.deleteCompany = function(name) {
+      CompanyFactory.deleteCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
+    };
     
     $scope.getAll();
 
