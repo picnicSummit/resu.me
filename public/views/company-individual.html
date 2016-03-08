@@ -12,42 +12,46 @@
   <!-- calendar strip goes here -->
 </section>
 
-<section class="taskbar">
+<section class="taskpanel">
+
+  <div class="taskbar">
   
-  <div class="buttonframe">
-    <a href="#">
-      <div class="taskbutton">
-        (resume)
-      </div>
-    </a>
-  </div>
+	<div class="buttonframe">
+	  <a ui-sref=".resume">
+	    <div class="taskbutton">
+	      (resume)
+	    </div>
+	  </a>
+	</div>
 
-  <div class="buttonframe">
-    <a href="#">
-      <div class="taskbutton">
-        (cover letter)
-      </div>
-    </a>
-  </div>
+    <div class="buttonframe">
+	  <a ui-sref=".cover-letter">
+	    <div class="taskbutton">
+	      (cover letter)
+	    </div>
+	  </a>
+	</div>
 
-  <div class="buttonframe">
-    <a href="#">
-      <div class="taskbutton">
-        (research)
-      </div>
-    </a>
-  </div>
+	<div class="buttonframe">
+	  <a ui-sref=".research">
+	    <div class="taskbutton">
+	      (research)
+	    </div>
+	  </a>
+	</div>
 
-  <div class="buttonframe">
-    <a href="#">
-      <div class="taskbutton">
-        (contacts)
-      </div>
-    </a>
+	<div class="buttonframe">
+	  <a ui-sref=".contacts">
+	    <div class="taskbutton">
+	      (contacts)
+	    </div>
+	  </a>
+	</div>
+	
   </div>
 
   <div>
-    <div ui-view="TaskView"></div>
+    <div ui-view="taskView"></div>
   </div>
 
 </section>

@@ -156,11 +156,14 @@ iframe {
   margin: 0 auto;
 }
 
-.taskbar {
+.taskpanel {
   margin-right: 12px;
+  border: solid 1px black;
+}
+
+.taskbar {
   padding: 5px;
-  border: solid 1px lightgray;
-  border-radius: 3px;
+  background-color: lightgray;
 }
 
 .buttonframe {
