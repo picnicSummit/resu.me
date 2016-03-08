@@ -8,6 +8,7 @@ angular.module('app')
       CompanyFactory.getAll()
         .then( function(data) {
           $scope.companies = data;
+          console.log($scope.companies);
         })
         .catch( function(error) {
           console.error(error);
