@@ -1,3 +1,8 @@
+<form ng-submit="addCompany(name)">
+  <input type="text" ng-model="name"></input>
+  <button type="submit">Add Company</button>
+</form>
+
 <ul ng-repeat="company in companies">
     <button ng-click="getCompany(company.name)">{{company.name}}</button>
 </ul>
