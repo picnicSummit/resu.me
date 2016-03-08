@@ -23,6 +23,13 @@ angular.module('app')
 
     };
 
+    $scope.addCompany = function(name) {
+      CompanyFactory.addCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
+    };
+
     $scope.getAll();
 
   }]);
