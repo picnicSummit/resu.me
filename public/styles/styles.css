@@ -141,5 +141,30 @@ iframe {
 
 
 /********************************
-  Some Other Page Elements...
+  Individual Company Styles
 *********************************/
+
+.company-name {
+  text-align: center;
+}
+
+.stage-bar {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.taskbar {
+  width: 90%;
+  background-color: lightgreen;
+  border: solid 1px lightgray;
+  border-radius: 2px;
+}
+
+.taskbutton {
+  min-width: 100px;
+  min-height: 100px;
+  line-height: 100px; /* temp vert. center hack */
+  background-color: lightblue;
+  border-radius: 5px;
+  text-align: center;
+}
