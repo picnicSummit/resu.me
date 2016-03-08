@@ -29,7 +29,7 @@ angular.module('app')
           console.error(error);
         });
     };
-
+    
     $scope.getAll();
 
   }]);

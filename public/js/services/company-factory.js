@@ -38,7 +38,7 @@ angular.module('app')
       return $http({
         method: 'POST',
         url: '/api/companies',
-        data: name
+        data: { name }
       });
     };
 
