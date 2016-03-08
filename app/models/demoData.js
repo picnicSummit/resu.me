@@ -13,14 +13,35 @@ module.exports = [
   },
 
   {
-    'name' : 'Company B'
+    'name' : 'Company B',
+    'status': {
+      'applied' : true,
+      'phone': true,
+      'onsite': false,
+      'offer': false,
+      'accepted': false  
+    }
   },
 
   {
-    'name' : 'Company C'
+    'name' : 'Company C',
+    'status': {
+      'applied' : true,
+      'phone': false,
+      'onsite': false,
+      'offer': false,
+      'accepted': false  
+    }
   },
 
   {
-    'name' : 'Company D'
+    'name' : 'Company D',
+    'status': {
+      'applied' : true,
+      'phone': true,
+      'onsite': true,
+      'offer': false,
+      'accepted': false  
+    }
   }
 ];

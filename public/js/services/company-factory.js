@@ -1,10 +1,6 @@
 angular.module('app')
   .factory( 'CompanyFactory', ['$rootScope', '$http', function($rootScope, $http) {
 
-    var companyData = {
-      data: 'There'
-    };
-
     var getAll = function() {
 
       return $http({
@@ -12,6 +8,7 @@ angular.module('app')
         url: '/api/companies'
       })
       .then( function (resp) {
+        $rootScope.$emit('showCompany', resp.data);
         return resp.data;
       })
       .catch( function(err) {
@@ -45,7 +42,6 @@ angular.module('app')
     return {
       getAll: getAll,
       getCompany: getCompany,
-      companyData: companyData,
       addCompany: addCompany
     };
 
