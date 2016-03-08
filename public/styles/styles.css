@@ -34,7 +34,6 @@ html {
 header {
   background-color: blue;
   color: rgba(255,255,255,0.6);
-  height: 400px;
 }
 
 header.narrow-header {
@@ -64,6 +63,13 @@ header.narrow-header {
 /********************************
      Landing Page Elements
 *********************************/
+
+.image-area {
+  background-image: url("../images/splash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
 
 /* enable columns */
 .primary-header-row {
