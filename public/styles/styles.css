@@ -71,12 +71,11 @@ html {
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 1.25px;
-  width: 200px; /* req'd, to horiz. center */
+  width: 300px; /* req'd, to horiz. center */
   margin: 60px auto 0 auto;
 }
 
 .tagline .line2 {
-  margin-top: 10px;
   margin-left: 32px;
 }
 
@@ -144,6 +143,10 @@ iframe {
   Individual Company Styles
 *********************************/
 
+.one-co {
+  background-color: lightyellow;
+}
+
 .company-name {
   text-align: center;
 }
@@ -154,10 +157,14 @@ iframe {
 }
 
 .taskbar {
-  width: 90%;
-  background-color: lightgreen;
+  margin-right: 12px;
+  padding: 5px;
   border: solid 1px lightgray;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+
+.buttonframe {
+  display: inline-block;
 }
 
 .taskbutton {
