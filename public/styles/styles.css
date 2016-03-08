@@ -178,3 +178,7 @@ iframe {
   border-radius: 5px;
   text-align: center;
 }
+
+.task-edit-area {
+  min-height: 500px;
+}
