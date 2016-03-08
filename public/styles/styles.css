@@ -6,21 +6,34 @@ html {
   font-family: sans-serif;
 }
 
-.log-in-out {
-  float: right;
-  margin-right: 32px;
-  margin-top: 20px;
+.menu-bar {
+  padding: 10px 32px 10px 20px;
+  background-color: rgba(0,0,255,0.6);
+  color: white;
   text-transform: uppercase;
-  font-size: 14px;
   letter-spacing: 1.25px;
 }
 
+.branding {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.log-in-out {
+  float: right;
+  margin-top: 4px; /* temp. vert. center hack */
+}
+
 .log-in-out a {
-  color: white;
+  color: rgba(255,255,255,0.9);
 }
 
 .log-in-out a:hover {
+  color: white;
   font-weight: bold;
+  text-decoration: none;
+}
+.log-in-out a:focus {
   text-decoration: none;
 }
 
@@ -31,94 +44,88 @@ html {
   display: none;
 }
 
-header {
-  background-color: blue;
-  color: rgba(255,255,255,0.6);
-  height: 400px;
-}
-
-header.narrow-header {
-  height: auto;
-  padding: 12px;
-}
-
-.title-block {
-  text-align: center;
-}
-
-.main-title {
-  margin-top: 80px;
-  color: lightblue;
-  text-transform: uppercase;
-  font-size: 42px;
-  font-weight: bold;
-  letter-spacing: 1.25px;
-}
-
-.narrow-header .main-title {
-  margin-top: 12px;
-  font-size: 24px;
-}
-
 
 /********************************
      Landing Page Elements
 *********************************/
 
-/* enable columns */
-.primary-header-row {
-  margin-left: 0;
-  margin-right: 0;
+.image-area {
+  background-image: url("../images/splash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 60%; /* image-specific focal point */
+  height: 400px;
 }
 
-.title-block-column {
+.left-column {
+  /*background-color: red;*/ /* for layout testing */
 }
 
-.description-column {
-  padding-right: 0;
-  padding-left: 0;
+.right-column {
+  /*background-color: green;*/ /* for layout testing */
 }
 
-.sub-title {
+.tagline {
+  color: indigo;
   font-style: italic;
   font-weight: bold;
+  font-size: 20px;
   letter-spacing: 1.25px;
+  width: 200px; /* req'd, to horiz. center */
+  margin: 60px auto 0 auto;
+}
+
+.tagline .line2 {
+  margin-top: 10px;
+  margin-left: 32px;
 }
 
 .btn {
-  margin-top: 80px;
-  color: indigo;
-  font-size: 24px;
+  margin: 250px 60px 0 0;
+  float: right;
+  font-size: 20px;
   font-weight: bold;
   letter-spacing: 1.25px;
-  padding: 10px 50px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .description {
-  margin-top: 40px;
+  color: indigo;
+  margin: 32px auto 0 auto;
   width: 200px;
   font-size: 14px;
   text-align: center;
-  border: 1px solid white;
+  border: 1px solid;
   border-radius: 6px;
   padding: 12px;
-}
-
-.description .where-you-stand {
-  color: white;
 }
 
 .description > ul {
   text-align: left;
   padding: 0 0 0 20px;
   margin: 10px 0;
-  color: white;
 }
 
-.promo-band {
+.promo-strip {
   min-height: 360px;
-  margin: 42px 0;
-  padding: 12px;
+  margin-top: 60px;
+  padding: 0 24px;
+}
+
+.promo-block {
+  min-height: 360px;
+  padding: 20px;
+}
+
+.promo-block.visual {
+  background-color: rgba(0,0,255,0.6);
+  color: white;
+  border-radius: 5px;
+}
+
+.promo-block.other {
+  color: indigo;
 }
 
 .video-frame {
@@ -127,22 +134,6 @@ header.narrow-header {
   width: 380px;
   height: 280px;
   padding: 22px 10px;
-}
-
-.demo {
-  background-color: lightblue;
-}
-
-.subject2 {
-  background-color: lightgreen;
-}
-
-.subject3 {
-  background-color: lightblue;
-}
-
-.subject4 {
-  background-color: lightgreen;
 }
 
 

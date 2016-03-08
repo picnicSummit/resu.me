@@ -23,10 +23,13 @@
   
   <body ng-app='app'>
 
-    <!-- login/logout on EVERY page -->
-    <div class="log-in-out">
-      <a class="login" ui-sref="companies">login</a>
-      <a class="logout" ui-sref="home">logout</a>
+    <!-- menu bar on EVERY page (maybe replace wi. Bootstrap navbar) -->
+    <div class="menu-bar">
+      <span class="branding">Job Hunt</span>
+      <div class="log-in-out">
+        <a class="login" ui-sref="companies">login</a>
+        <a class="logout" ui-sref="home">logout</a>
+      </div>
     </div>
 
     <!-- inject main content -->
