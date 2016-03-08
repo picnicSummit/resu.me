@@ -57,54 +57,48 @@ html {
   height: 400px;
 }
 
-/*
-.primary-header-row {
-  margin-left: 0;
-  margin-right: 0;
+.left-column {
+  /*background-color: red;*/ /* for layout testing */
 }
 
-.title-block-column {
+.right-column {
+  /*background-color: green;*/ /* for layout testing */
 }
 
-.description-column {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-.sub-title {
+.tagline {
+  color: indigo;
   font-style: italic;
   font-weight: bold;
   letter-spacing: 1.25px;
+  text-align: center;
+  margin-top: 60px;
 }
 
 .btn {
-  margin-top: 80px;
-  color: indigo;
-  font-size: 24px;
+  margin: 250px 60px 0 0;
+  float: right;
+  font-size: 20px;
   font-weight: bold;
   letter-spacing: 1.25px;
-  padding: 10px 50px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .description {
-  margin-top: 40px;
+  color: indigo;
+  margin: 40px auto 0 auto;
   width: 200px;
   font-size: 14px;
   text-align: center;
-  border: 1px solid white;
+  border: 1px solid;
   border-radius: 6px;
   padding: 12px;
-}
-
-.description .where-you-stand {
-  color: white;
 }
 
 .description > ul {
   text-align: left;
   padding: 0 0 0 20px;
   margin: 10px 0;
-  color: white;
 }
 
 .promo-band {
@@ -122,21 +116,21 @@ html {
 }
 
 .demo {
-  background-color: lightblue;
+  background-color: rgba(0,0,255,0.6);
 }
 
 .subject2 {
-  background-color: lightgreen;
+  background-color: rgba(0,0,255,0.8);
 }
 
 .subject3 {
-  background-color: lightblue;
+  background-color: rgba(0,0,255,0.6);
 }
 
 .subject4 {
-  background-color: lightgreen;
+  background-color: rgba(0,0,255,0.8);
 }
-*/
+
 
 /********************************
   Some Other Page Elements...
