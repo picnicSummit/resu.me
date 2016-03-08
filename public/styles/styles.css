@@ -6,21 +6,34 @@ html {
   font-family: sans-serif;
 }
 
-.log-in-out {
-  float: right;
-  margin-right: 32px;
-  margin-top: 20px;
+.menu-bar {
+  padding: 10px 32px 10px 20px;
+  background-color: rgba(0,0,255,0.6);
+  color: white;
   text-transform: uppercase;
-  font-size: 14px;
   letter-spacing: 1.25px;
 }
 
+.branding {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.log-in-out {
+  float: right;
+  margin-top: 4px; /* temp. vert. center hack */
+}
+
 .log-in-out a {
-  color: white;
+  color: rgba(255,255,255,0.9);
 }
 
 .log-in-out a:hover {
+  color: white;
   font-weight: bold;
+  text-decoration: none;
+}
+.log-in-out a:focus {
   text-decoration: none;
 }
 
@@ -29,34 +42,6 @@ html {
 
 .logout {
   display: none;
-}
-
-header {
-  background-color: blue;
-  color: rgba(255,255,255,0.6);
-}
-
-header.narrow-header {
-  height: auto;
-  padding: 12px;
-}
-
-.title-block {
-  text-align: center;
-}
-
-.main-title {
-  margin-top: 80px;
-  color: lightblue;
-  text-transform: uppercase;
-  font-size: 42px;
-  font-weight: bold;
-  letter-spacing: 1.25px;
-}
-
-.narrow-header .main-title {
-  margin-top: 12px;
-  font-size: 24px;
 }
 
 
@@ -68,10 +53,11 @@ header.narrow-header {
   background-image: url("../images/splash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center 60%; /* image-specific focal point */
   height: 400px;
 }
 
-/* enable columns */
+/*
 .primary-header-row {
   margin-left: 0;
   margin-right: 0;
@@ -150,7 +136,7 @@ header.narrow-header {
 .subject4 {
   background-color: lightgreen;
 }
-
+*/
 
 /********************************
   Some Other Page Elements...
