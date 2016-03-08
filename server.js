@@ -1,7 +1,12 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var Company = require( './app/models/company' );
+var bodyParser = require('body-parser');
 var app = express();
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 var port = process.env.PORT || 4568;
 var dbURI = 'mongodb://localhost/jobhunt';
@@ -40,7 +45,6 @@ mongoose.connection.on( 'connected', function () {
 });
 
 
-
 // handle this elsewhere...
 
 app.get( '/api/companies', function( req, res ) {
@@ -63,7 +67,7 @@ app.get('/api/companies/:name', function(req, res) {
   Company.find( {name: name }, function(error, company) {
     console.log('company', company);
     if (error) {
-    console.log('error', error);
+      console.log('error', error);
       res.json(error);
     } else if ( company === null ) {
       res.json('Empty data');
@@ -72,6 +76,19 @@ app.get('/api/companies/:name', function(req, res) {
     }
   });
 });
+
+app.post( '/api/companies', function(req, res) {
+  
+  var newCompany = Company({
+    name: req.body.name
+  });
+
+  newCompany.save(function(err) {
+    res.end();
+  });
+
+});
+
 
 
 

@@ -34,10 +34,19 @@ angular.module('app')
 
     };
 
+    var addCompany = function(name) {
+      return $http({
+        method: 'POST',
+        url: '/api/companies',
+        data: { name }
+      });
+    };
+
     return {
       getAll: getAll,
       getCompany: getCompany,
-      companyData: companyData
+      companyData: companyData,
+      addCompany: addCompany
     };
 
   }]);
