@@ -73,5 +73,13 @@ app.get('/api/companies/:name', function(req, res) {
   });
 });
 
+app.post( '/api/companies', function(req, res) {
 
+  console.log('req.body ----', req.body);
+
+  // var newCompany = Company({
+    
+  // });
+
+});
 
