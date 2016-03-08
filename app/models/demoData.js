@@ -3,11 +3,13 @@
 module.exports = [
   {
     'name' : 'Company A',
-    'applied' : true,
-    'phone interview': true,
-    'onsite interview': true,
-    'offer': true,
-    'accepted': false
+    'status': {
+      'applied' : true,
+      'phone': true,
+      'onsite': true,
+      'offer': true,
+      'accepted': false  
+    }
   },
 
   {

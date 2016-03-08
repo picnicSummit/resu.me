@@ -3,16 +3,26 @@ angular.module('app')
 
     $scope.company;
 
-    $scope.index = [];
+    $scope.status = [];
 
     $rootScope.$on('showCompany', function(event, data) {
-      console.log(data[0].name);
       $scope.company = data[0].name;
-      for (var key in data[0]) {
-        if (key !== 'company') {
-          $scope.index.push()
+      var status = data[0].status;
+
+      for (var key in status) {
+        if (status[key] === true) {
+          $scope.status.push({
+            value: key,
+            type: 'success'
+          });
+        } else {
+          $scope.status.push({
+            value: key,
+            type: 'danger'
+          });
         }
       }
+      console.log($scope.status);
     });
 
   }]);
