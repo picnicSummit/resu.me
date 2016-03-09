@@ -178,22 +178,35 @@ iframe {
 /* show button 'selected' on mouse-over or click */
 .buttonframe:hover {
   background-color: rgba(0,0,255,0.4);
+  text-decoration: none;
 }
 .buttonframe:focus {
   background-color: rgba(0,0,255,0.6);
+  text-decoration: none;
 }
 
 .taskbutton {
-  min-width: 100px;
-  min-height: 100px;
-  line-height: 100px; /* temp vert. center hack */
-  background-color: lightblue;
+  background-color: rgba(255,255,255, 0.65);
+  color: rgba(0,0,255,0.5);
+  width: 100px;
+  height: 100px;
   border-radius: 5px;
   text-align: center;
+  font-size: 48px;
+}
+
+.taskbutton .caption {
+  color: rgba(0,0,255,0.6);
+  font-size: 14px;
+  transform: translate( 0%,10%);
 }
 
 .task-edit-area {
   min-height: 500px;
   background-color: white;
   text-align: center; /* temp hack for demo purposes */
+}
+
+.task-edit-area iframe {
+  height: 1000px;
 }
