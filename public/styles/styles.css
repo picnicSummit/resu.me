@@ -71,12 +71,11 @@ html {
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 1.25px;
-  width: 200px; /* req'd, to horiz. center */
+  width: 300px; /* req'd, to horiz. center */
   margin: 60px auto 0 auto;
 }
 
 .tagline .line2 {
-  margin-top: 10px;
   margin-left: 32px;
 }
 
@@ -115,7 +114,7 @@ html {
 
 .promo-block {
   min-height: 360px;
-  padding: 20px;
+  padding: 16px;
 }
 
 .promo-block.visual {
@@ -131,12 +130,55 @@ html {
 .video-frame {
   background-color: black;
   border-radius: 5px;
-  width: 380px;
-  height: 280px;
-  padding: 22px 10px;
+  padding: 12px 6px;
+}
+
+iframe {
+  width: 100%;
+  min-height: 230px;
 }
 
 
 /********************************
-  Some Other Page Elements...
+  Individual Company Styles
 *********************************/
+
+.one-co {
+  background-color: lightyellow;
+}
+
+.company-name {
+  text-align: center;
+}
+
+.stage-bar {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.taskpanel {
+  margin-right: 12px;
+  border: solid 1px black;
+}
+
+.taskbar {
+  padding: 5px;
+  background-color: lightgray;
+}
+
+.buttonframe {
+  display: inline-block;
+}
+
+.taskbutton {
+  min-width: 100px;
+  min-height: 100px;
+  line-height: 100px; /* temp vert. center hack */
+  background-color: lightblue;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.task-edit-area {
+  min-height: 500px;
+}

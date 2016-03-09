@@ -1,10 +1,56 @@
-<div>
-	<h3>Status</h3>
-	    <uib-progress>
-	    	<uib-bar ng-repeat="bar in status" type="{{bar.type}}" value="20" box-shadow="0 0 5px 5px black"> 
-	    		<span>{{bar.value}}</span>
-	    	</uib-bar>
-	    </uib-progress>
-    <h3>{{companyName}}</h3>
 
-</div>
+<section>
+  <h3 class="company-name">interview stage: {{companyName}}</h3>
+  <uib-progress class="stage-bar">
+    <uib-bar ng-repeat="bar in status" type="{{bar.type}}" value="20" box-shadow="0 0 5px 5px black"> 
+	  <span>{{bar.value}}</span>
+	</uib-bar>
+  </uib-progress>
+</section>
+
+<section>
+  <!-- calendar strip goes here -->
+</section>
+
+<section class="taskpanel">
+
+  <div class="taskbar">
+  
+	<div class="buttonframe">
+	  <a ui-sref=".resume">
+	    <div class="taskbutton">
+	      (resume)
+	    </div>
+	  </a>
+	</div>
+
+    <div class="buttonframe">
+	  <a ui-sref=".cover-letter">
+	    <div class="taskbutton">
+	      (cover letter)
+	    </div>
+	  </a>
+	</div>
+
+	<div class="buttonframe">
+	  <a ui-sref=".research">
+	    <div class="taskbutton">
+	      (research)
+	    </div>
+	  </a>
+	</div>
+
+	<div class="buttonframe">
+	  <a ui-sref=".contacts">
+	    <div class="taskbutton">
+	      (contacts)
+	    </div>
+	  </a>
+	</div>
+
+  </div>
+
+  <div ui-view="taskView" class="task-edit-area">
+  </div>
+
+</section>

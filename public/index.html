@@ -5,20 +5,13 @@
     <meta charset="utf-8">
     <title>Job Hunt</title>
     <!-- CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!--CDN DEPENDENCIES -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
-
-    <!-- OUR FILES -->
-    <script src="js/app.js"></script>
-    <script src="js/services/company-factory.js"></script>
-    <script src="js/controllers/companies-controller.js"></script>
-    <script src="js/controllers/company-controller.js"></script>
   </head>
   
   <body ng-app='app'>
@@ -34,6 +27,14 @@
 
     <!-- inject main content -->
     <div ui-view></div>
+
+
+    <!-- standard trick: scripts before closing 'body' tag ensures
+      page elements have all loaded before referencing in code -->
+    <script src="js/app.js"></script>
+    <script src="js/services/company-factory.js"></script>
+    <script src="js/controllers/companies-controller.js"></script>
+    <script src="js/controllers/company-controller.js"></script>
   
   </body>
 </html>
