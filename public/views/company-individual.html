@@ -7,55 +7,44 @@
   </uib-progress>
 </section>
 
-<section>
-  <!-- calendar strip goes here -->
-</section>
+<!--section>
+  <iframe ng-src="{{calendar}}" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</section-->
 
 <section class="taskpanel">
 
   <div class="taskbar">
   
-	<div class="buttonframe">
-	  <a ui-sref=".resume">
-	    <div class="taskbutton">
-	      (resume)
-	    </div>
-	  </a>
-	</div>
+	<a ui-sref=".resume" class="buttonframe">
+	  <div class="taskbutton">
+	    (resume)
+	  </div>
+	</a>
 
-    <div class="buttonframe">
-	  <a ui-sref=".cover-letter">
-	    <div class="taskbutton">
-	      (cover letter)
-	    </div>
-	  </a>
-	</div>
+	<a ui-sref=".cover-letter" class="buttonframe">
+	  <div class="taskbutton">
+	    (cover letter)
+	  </div>
+	</a>
 
-	<div class="buttonframe">
-	  <a ui-sref=".research">
-	    <div class="taskbutton">
-	      (research)
-	    </div>
-	  </a>
-	</div>
+	<a ui-sref=".research" class="buttonframe">
+	  <div class="taskbutton">
+	    (research)
+	  </div>
+	</a>
 
-	<div class="buttonframe">
-	  <a ui-sref=".contacts">
-	    <div class="taskbutton">
-	      (contacts)
-	    </div>
-	  </a>
-	</div>
+	<a ui-sref=".contacts" class="buttonframe">
+	  <div class="taskbutton">
+	    (contacts)
+	  </div>
+	</a>
+
+    <!-- Bootstrap utility to clear floats -->
+	<div class="clearfix"></div>
 
   </div>
-
-    <iframe ng-src="{{calendar}}" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
   <div ui-view class="task-edit-area">
   </div>
 
 </section>
-
-
-
-
