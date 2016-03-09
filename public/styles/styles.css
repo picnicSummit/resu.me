@@ -181,4 +181,6 @@ iframe {
 
 .task-edit-area {
   min-height: 500px;
+  background-color: white;
+  text-align: center; /* temp hack for demo purposes */
 }
