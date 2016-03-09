@@ -190,6 +190,11 @@ iframe {
   background-color: lightblue;
   border-radius: 5px;
   text-align: center;
+  font-size: 42px;
+}
+
+.taskbutton .caption {
+  font-size: 14px;
 }
 
 .task-edit-area {
