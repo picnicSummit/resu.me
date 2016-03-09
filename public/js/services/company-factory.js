@@ -1,6 +1,8 @@
 angular.module('app')
   .factory( 'CompanyFactory', ['$rootScope', '$http', function($rootScope, $http) {
 
+    var calendar;
+
     var getAll = function() {
 
       return $http({
@@ -39,10 +41,31 @@ angular.module('app')
       });
     };
 
+    var getCalendar = function() {
+      return gapi.client.request({
+        path: 'https://www.googleapis.com/calendar/v3/users/me/calendarList'
+      });
+    };
+
+    var googleLogin = function() {
+      return gapi.auth.authorize({
+        client_id: '503303984200-f38p65l8hpn7jjhjojng1f2knss5unv0.apps.googleusercontent.com',
+        immediate: false,
+        scope: 'https://www.googleapis.com/auth/calendar'
+      })
+        .then(getCalendar)
+        .then(function(data) {
+          return data;
+      });
+    };
+
     return {
       getAll: getAll,
       getCompany: getCompany,
-      addCompany: addCompany
+      addCompany: addCompany,
+      getCalendar: getCalendar,
+      googleLogin: googleLogin,
+      calendar: calendar
     };
 
   }]);
