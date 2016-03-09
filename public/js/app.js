@@ -23,15 +23,6 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
           templateUrl: '../views/company-individual.html',
           controller: 'CompanyController'
         }
-
-        /*
-        'taskView@companies': {
-          templateUrl: '../views/resume.html',
-          controller: function($scope) {
-            $scope.data = "we're editing our resume";
-          }
-        }
-        */
       }    
     })
 
