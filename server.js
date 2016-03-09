@@ -89,27 +89,18 @@ app.post( '/api/companies', function(req, res) {
 
 });
 
-
 app.get( '/test', function(req, res) {
   res.sendfile(__dirname + '/public/test/test.html');
 });
 
 app.delete( '/api/companies/:id', function (req, res) {
 
-  // console.log('-----------req.params---------', req.params);
-  // console.log('---Company---', Object.keys(Company));
+  var id = req.params.id;
 
-  Company.find({
-    id: req.params.id
-  }, function (err, company) {
-    if (err) {
-      res.send(err);
-    }
-    company.remove( function (err) {
-
-    });
-    res.end();
+  Company.remove({ _id: mongoose.Types.ObjectId(id) }, function(err, doc) {
+    res.json(doc);
   });
+
 
 });
 
