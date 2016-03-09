@@ -28,14 +28,14 @@ angular.module('app')
     $scope.googleLogin = function() {
       CompanyFactory.googleLogin()
         .then(function(data) {
-          $scope.calendar = 'bleargh';
+          $scope.calendar = $sce.trustAsResourceUrl("https://calendar.google.com/calendar/embed?src=telegraphacademy.com_sjdmvde3rdbc1b2kli4c2hb864%40group.calendar.google.com");
           console.log(data);
         });
     };
 
     // $rootScope.$on('showCalendar', function(event, data) {
     //   $scope.calendar = 'poopypants'; 
-    //  //  $sce.trustAsResourceUrl("https://calendar.google.com/calendar/embed?src=telegraphacademy.com_sjdmvde3rdbc1b2kli4c2hb864%40group.calendar.google.com&ctz=America/Los_Angeles");
+    //  //  
     //  // // console.log($scope.calendar);
     // });
 
