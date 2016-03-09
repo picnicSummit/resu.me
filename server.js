@@ -89,6 +89,8 @@ app.post( '/api/companies', function(req, res) {
 
 });
 
-
+app.get( '/test', function(req, res) {
+  res.sendfile(__dirname + '/public/test/test.html');
+});
 
 
