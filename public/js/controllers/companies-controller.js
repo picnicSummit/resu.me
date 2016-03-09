@@ -16,7 +16,7 @@ angular.module('app')
     };
 
     $scope.getCompany = function(name) {
-      //console.log(name)// -- it worked
+      // console.log(name);// -- it worked
       CompanyFactory.getCompany(name)
         .catch( function(error) {
           console.error(error);
@@ -25,12 +25,30 @@ angular.module('app')
     };
 
     $scope.addCompany = function(name) {
+      // console.log(name);
+      if ( name === '') {
+        return;
+      }
+
       CompanyFactory.addCompany(name)
+        .then( function (res) {
+          $scope.name = '';
+        })
         .catch( function(error) {
           console.error(error);
         });
+      $scope.getAll();
     };
-    
+
+    $scope.deleteCompany = function(id) {
+      console.log('---------Company Factory--------', CompanyFactory);
+      CompanyFactory.deleteCompany(id)
+        .catch( function(error) {
+          console.error(error);
+        });
+
+    };
+
     $scope.getAll();
 
   }]);
