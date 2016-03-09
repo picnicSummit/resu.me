@@ -52,6 +52,10 @@ angular.module('app')
       $scope.getAll();
     };
 
+    $scope.appliedToCompany = function() {
+
+    };
+    
     $scope.getAll();
 
   }]);
