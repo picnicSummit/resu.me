@@ -31,7 +31,7 @@ angular.module('app')
       }
 
       CompanyFactory.addCompany(name)
-        .then( function (res) {
+        .then( function (data) {
           $scope.name = '';
         })
         .catch( function(error) {
@@ -41,12 +41,12 @@ angular.module('app')
     };
 
     $scope.deleteCompany = function(id) {
-      console.log('---------Company Factory--------', CompanyFactory);
+      console.log('---------Company Factory--------', id);
       CompanyFactory.deleteCompany(id)
         .catch( function(error) {
           console.error(error);
         });
-
+      $scope.getAll();
     };
 
     $scope.getAll();
