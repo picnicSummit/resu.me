@@ -206,3 +206,7 @@ iframe {
   background-color: white;
   text-align: center; /* temp hack for demo purposes */
 }
+
+.task-edit-area iframe {
+  height: 1000px;
+}
