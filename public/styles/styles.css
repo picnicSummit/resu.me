@@ -167,25 +167,29 @@ iframe {
 }
 
 .taskbar {
-  padding: 5px;
   background-color: lightgray;
 }
 
 .buttonframe {
-  display: inline-block;
+  padding: 5px;
+  float: left;
+}
+
+/* show button 'selected' on mouse-over or click */
+.buttonframe:hover {
+  background-color: rgba(0,0,255,0.4);
+}
+.buttonframe:focus {
+  background-color: rgba(0,0,255,0.6);
 }
 
 .taskbutton {
   min-width: 100px;
   min-height: 100px;
   line-height: 100px; /* temp vert. center hack */
-  background-color: rgba(0,0,255,0.25);
+  background-color: lightblue;
   border-radius: 5px;
   text-align: center;
-}
-
-.taskbutton:hover, .taskbutton:focus, .taskbutton:active {
-  background-color: rgba(0,0,255,0.5);
 }
 
 .task-edit-area {
