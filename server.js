@@ -96,8 +96,8 @@ app.get( '/test', function(req, res) {
 
 app.delete( '/api/companies/:id', function (req, res) {
 
-  console.log('-----------req.params---------', req.params);
-  console.log('---Company---', Object.keys(Company));
+  // console.log('-----------req.params---------', req.params);
+  // console.log('---Company---', Object.keys(Company));
 
   Company.findByIdAndRemove({
     id: req.params.id
