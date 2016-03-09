@@ -2,12 +2,7 @@
 <div class="row">
 
     <!-- NAVIGATION BAR--> 
-    <div class="navbar">
-      <ul class="nav nav-tabs">      
-        <li role="presentation" class="active"><a href='' ng-click="loadCompanyLog()">Company Log</a></li>
-        <li role="presentation"><a href='' ng-click="loadCalendar()">Calendar</a></li>
-      </ul>
-    </div>
+    <div ui-view="navBar"></div>
 
     <!-- COLUMN LIST OF COMPANIES -->
     <div class="col-sm-3">
@@ -16,7 +11,7 @@
     
     <!-- COLUMN VIEW OF ONE COMPANY -->
     <div class="col-sm-9 one-co">
-        <div ui-view="companyView"></div>
+        <div ui-view></div>
     </div>
 
 </div> 
