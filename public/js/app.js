@@ -19,11 +19,25 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
           templateUrl: '../views/company-list.html',
           controller: 'CompaniesController'
         },
-        'companyView@companies': {
-          templateUrl: '../views/company-individual.html',
-          controller: 'CompanyController'
+        'navBar@companies': {
+          templateUrl: '../views/navbar.html',
+          controller: 'NavbarController'
         }
       }    
+    })
+
+    .state('companies.calendar', {
+      url: '/calendar',
+      parent: 'companies',
+      templateUrl: '../views/calendar.html',
+      controller: 'CalendarController'
+    })
+
+    .state('companies.view', {
+      url: '/company-view',
+      parent: 'companies',
+      templateUrl: '../views/company-individual.html',
+      controller: 'CompanyController'
     })
 
      // nested RESUME view with custom controller
@@ -61,5 +75,12 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
         $scope.data = 'these are our contacts';
       }
     });
-        
 });
+
+app.run(
+    ['$rootScope', '$state', '$stateParams',
+      function ($rootScope, $state, $stateParams) {
+          $rootScope.$state = $state;
+          $rootScope.$stateParams = $stateParams;
+      }
+    ])
