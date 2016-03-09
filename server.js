@@ -94,13 +94,12 @@ app.get( '/test', function(req, res) {
 });
 
 app.delete( '/api/companies/:id', function (req, res) {
-
+  
   var id = req.params.id;
-
-  Company.remove({ _id: mongoose.Types.ObjectId(id) }, function(err, doc) {
-    res.json(doc);
-  });
-
+  Company.remove({ _id: mongoose.Types.ObjectId(id) }, 
+    function(err, doc) {
+      res.json(doc);
+    });
 
 });
 

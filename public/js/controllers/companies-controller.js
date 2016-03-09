@@ -41,6 +41,10 @@ angular.module('app')
     };
 
     $scope.deleteCompany = function(id) {
+      // if (!confirm( "Are you sure you want to delete this company?" )) {
+      //   return;
+      // }
+
       console.log('---------Company Factory--------', id);
       CompanyFactory.deleteCompany(id)
         .catch( function(error) {
