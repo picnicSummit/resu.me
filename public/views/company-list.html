@@ -5,5 +5,6 @@
 <br>
 <ul ng-repeat="company in companies">
     <button ng-click="getCompany(company.name)">{{company.name}}</button>
+    <span class="glyphicon glyphicon-pencil"></span>
     <span class="glyphicon glyphicon-trash" ng-click="deleteCompany(company._id)"></span>
 </ul>
