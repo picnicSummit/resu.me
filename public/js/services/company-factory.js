@@ -56,7 +56,7 @@ angular.module('app')
         .then(getCalendar)
         .then(function(data) {
           return data;
-      });
+        });
     };
 
     return {
