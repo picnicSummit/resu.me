@@ -59,13 +59,23 @@ angular.module('app')
       });
     };
 
+    var deleteCompany = function(id) {
+      console.log('------factory id-----', id);
+      return $http({
+        method: 'DELETE',
+        url: '/api/companies/' + id
+      });
+    };
+
     return {
       getAll: getAll,
       getCompany: getCompany,
       addCompany: addCompany,
       getCalendar: getCalendar,
       googleLogin: googleLogin,
-      calendar: calendar
+      calendar: calendar,
+      deleteCompany: deleteCompany
+
     };
 
   }]);
