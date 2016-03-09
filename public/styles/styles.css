@@ -4,24 +4,29 @@
 
 html {
   font-family: sans-serif;
+  overflow-x: hidden; /* prevents horiz scrollbar when using vh for full-screen image */
 }
 
 .menu-bar {
-  padding: 10px 32px 10px 20px;
+  height: 10vh;
+  line-height: 10vh; /* vert. center text hack */
+  padding-left: 3vw;
+  padding-right: 4vw;
   background-color: rgba(0,0,255,0.6);
   color: white;
   text-transform: uppercase;
-  letter-spacing: 1.25px;
 }
 
 .branding {
-  font-size: 18px;
+  font-size: 4vh;
   font-weight: bold;
+  letter-spacing: 0.6vw;
 }
 
 .log-in-out {
   float: right;
-  margin-top: 4px; /* temp. vert. center hack */
+  font-size: 3vh;
+  letter-spacing: 0.25vw;
 }
 
 .log-in-out a {
@@ -53,8 +58,8 @@ html {
   background-image: url("../images/splash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 60%; /* image-specific focal point */
-  height: 400px;
+  background-position: center 60%; /* offset, for image-specific focal point */
+  height: 90vh; /* combined with menu = 100% screen height */
 }
 
 .left-column {
@@ -118,7 +123,7 @@ html {
 }
 
 .promo-block.visual {
-  background-color: rgba(0,0,255,0.6);
+  background-color: rgba(0,0,255,0.4);
   color: white;
   border-radius: 5px;
 }
@@ -174,9 +179,13 @@ iframe {
   min-width: 100px;
   min-height: 100px;
   line-height: 100px; /* temp vert. center hack */
-  background-color: lightblue;
+  background-color: rgba(0,0,255,0.25);
   border-radius: 5px;
   text-align: center;
+}
+
+.taskbutton:hover, .taskbutton:focus, .taskbutton:active {
+  background-color: rgba(0,0,255,0.5);
 }
 
 .task-edit-area {
