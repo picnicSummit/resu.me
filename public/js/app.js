@@ -37,7 +37,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       url: '/resume',
       templateUrl: '../views/resume.html',
       controller: function($scope) {
-        $scope.data = 'this is our resume';
+        $scope.data = 'resume';
       }
     })
 
