@@ -7,7 +7,7 @@
 <br>
 
 <!-- LIST OF COMPANIES -->
-<ul ng-repeat="company in companies">
+<ul ng-repeat="company in $root.companies">
     <button ng-click="getCompany(company.name)">{{company.name}}</button>
 	<span class="glyphicon glyphicon-ok" ng-click="appliedToCompany(company)" style="color:green" title="Applied"></span>
     <span class="glyphicon glyphicon-trash" title="Delete" ng-click="deleteCompany(company._id)"></span>

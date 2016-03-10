@@ -1,7 +1,7 @@
 angular.module('app')
   .factory( 'CompanyFactory', ['$rootScope', '$http', function($rootScope, $http) {
 
-    var calendar;
+    var firstCompany;
 
     var getAll = function() {
 
@@ -12,20 +12,6 @@ angular.module('app')
       .then( function (resp) {
         $rootScope.$emit('showCompany', resp.data);
         return resp.data;
-      })
-      .catch( function(err) {
-        console.log( 'CompanyFactory error:', err );
-      });
-
-    };
-
-    var getCompany = function(name) {
-      return $http({
-        method: 'GET',
-        url: '/api/companies/' + name
-      })
-      .then( function (resp) {
-        $rootScope.$emit('showCompany', resp.data);
       })
       .catch( function(err) {
         console.log( 'CompanyFactory error:', err );
@@ -69,12 +55,10 @@ angular.module('app')
 
     return {
       getAll: getAll,
-      getCompany: getCompany,
       addCompany: addCompany,
       getCalendar: getCalendar,
       googleLogin: googleLogin,
-      calendar: calendar,
-      deleteCompany: deleteCompany
+      deleteCompany: deleteCompany,
 
     };
 

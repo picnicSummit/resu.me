@@ -1,14 +1,12 @@
 angular.module('app')
   .controller( 'CompanyController', ['$rootScope', '$sce', '$scope', 'CompanyFactory', function( $rootScope, $sce, $scope, CompanyFactory ) {
 
-
     $scope.status = [];
-    $scope.companyName;
-    $scope.calendar;
-
+    console.log($rootScope.companies);
+    $scope.companyName = $rootScope.companies[0].name;
 
     $scope.statusParser = function(data) {
-      var status = data[0].status;
+      var status = data.status;
       for (var key in status) {
         if (status[key] === true) {
           $scope.status.push({
@@ -24,11 +22,16 @@ angular.module('app')
       }
     };
 
-    $rootScope.$on('showCompany', function(event, data) {
+    $rootScope.$on('showCompany', function(event, name) {
       $scope.status = [];
-
-      $scope.statusParser(data);
-      $scope.companyName = data[0].name;
+      for (var i = 0; i < $rootScope.companies.length; i++) {
+        if ($rootScope.companies[i].name === name) {
+          $scope.statusParser($rootScope.companies[i]);
+        }
+      }
+      $scope.companyName = name;
     });
+
+    $scope.statusParser($rootScope.companies[0]);
 
   }]);
