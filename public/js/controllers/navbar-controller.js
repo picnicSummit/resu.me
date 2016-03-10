@@ -10,5 +10,4 @@ angular.module('app')
     };
 
     $scope.setCompany();
-   // $rootScope.$emit('companyViewLoaded');
   }]);
