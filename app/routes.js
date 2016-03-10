@@ -9,7 +9,7 @@ var User = require( './models/user' );
 
 module.exports = function (app) {
 
-  app.get( '/api/companies', function( req, res ) {
+  app.get( '/api/companies', auth, function( req, res ) {
     Company.find( {}, function(error, companies) {
       if ( error ) {
         res.json(error);
@@ -21,7 +21,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/companies/:name', function(req, res) {
+  app.get('/api/companies/:name', auth, function(req, res) {
     var name = req.params.name;
     Company.find( {name: name }, function(error, company) {
       console.log('company', company);
@@ -36,7 +36,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post( '/api/companies', function(req, res) {
+  app.post( '/api/companies', auth, function(req, res) {
     var newCompany = Company({
       name: req.body.name,
       status: {
@@ -60,7 +60,7 @@ module.exports = function (app) {
     res.sendfile(__dirname + '/public/test/test.html');
   });
 
-  app.delete( '/api/companies/:id', function (req, res) {
+  app.delete( '/api/companies/:id', auth, function (req, res) {
     
     var id = req.params.id;
     Company.remove({ _id: mongoose.Types.ObjectId(id) }, 

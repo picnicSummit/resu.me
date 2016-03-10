@@ -9,7 +9,7 @@ angular.module('app')
       $scope.user = {};
 
       $scope.register = function() {
-        console.log('----------------inside register----------');
+        console.log('----------------inside register----------', $scope.user);
         auth.register($scope.user)
         .error(function(error) {
           $scope.error = error;
@@ -19,8 +19,8 @@ angular.module('app')
         });
       };
 
-      $scope.logIn = function() {
-        auth.logIn($scope.user)
+      $scope.login = function() {
+        auth.login($scope.user)
         .error(function(error) {
           $scope.error = error;
         })
