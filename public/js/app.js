@@ -10,11 +10,15 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       url: '/home',
       templateUrl: '../views/home.html'
     })
-        
+
+    //declare COMPANIES page state with static templates navbar & companylist    
     .state('companies', {
       url: '/companies',
       views: {
-        '': { templateUrl: '../views/companies.html' },
+        '': { 
+          templateUrl: '../views/companies.html',
+          controller: 'MasterController'
+        },
         'companyList@companies': {
           templateUrl: '../views/company-list.html',
           controller: 'CompaniesController'
@@ -26,12 +30,15 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       }    
     })
 
+    //nested CALENDAR state inside of COMPANIES
     .state('companies.calendar', {
       url: '/calendar',
       templateUrl: '../views/calendar.html',
       controller: 'CalendarController'
     })
 
+    //nested COMPANY-VIEW state inside of companies
+    //ndividual company with static template taskbar
     .state('companies.view', {
       url: '/company-view',
       views: {
@@ -79,4 +86,3 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     });
         
 });
-;''
