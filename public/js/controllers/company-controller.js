@@ -1,9 +1,11 @@
 angular.module('app')
   .controller( 'CompanyController', ['$rootScope', '$sce', '$scope', 'CompanyFactory', function( $rootScope, $sce, $scope, CompanyFactory ) {
 
+
     $scope.status = [];
     $scope.companyName;
-    
+    $scope.calendar;
+
 
     $scope.statusParser = function(data) {
       var status = data[0].status;
@@ -21,7 +23,6 @@ angular.module('app')
         }
       }
     };
-   
 
     $rootScope.$on('showCompany', function(event, data) {
       $scope.status = [];
