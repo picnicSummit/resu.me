@@ -17,7 +17,6 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       views: {
         '': { 
           templateUrl: '../views/companies.html',
-          controller: 'MasterController'
         },
         'companyList@companies': {
           templateUrl: '../views/company-list.html',
@@ -25,32 +24,16 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
         },
         'navBar@companies': {
           templateUrl: '../views/navbar.html',
-          controller: 'NavbarController'
+        },
+        'companyView@companies': {
+          templateUrl: '../views/company-individual.html',
+          controller: 'CompanyController'
         }
       }    
     })
 
-    //nested CALENDAR state inside of COMPANIES
-    .state('companies.calendar', {
-      url: '/calendar',
-      templateUrl: '../views/calendar.html',
-      controller: 'MasterController'
-    })
-
-    //nested COMPANY-VIEW state inside of companies
-    //ndividual company with static template taskbar
-    .state('companies.view', {
-      url: '/company-view',
-      views: {
-        '': { 
-          templateUrl: '../views/company-individual.html',
-          controller: 'CompanyController'
-        },
-        'taskBar@companies.view': { templateUrl: '../views/taskbar.html'}
-      },
-    })
      // nested RESUME view with custom controller
-    .state('companies.view.resume', {
+    .state('companies.resume', {
       url: '/resume',
       templateUrl: '../views/resume.html',
       controller: function($scope) {
@@ -59,7 +42,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     })
 
      // nested COVER LETTER view with custom controller
-    .state('companies.view.cover-letter', {
+    .state('companies.cover-letter', {
       url: '/cover-letter',
       templateUrl: '../views/cover-letter.html',
       controller: function($scope) {
@@ -68,7 +51,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     })
 
      // nested RESEARCH view with custom controller
-    .state('companies.view.research', {
+    .state('companies.research', {
       url: '/research',
       templateUrl: '../views/research.html',
       controller: function($scope) {
@@ -77,7 +60,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     })
 
      // nested CONTACTS view with custom controller
-    .state('companies.view.contacts', {
+    .state('companies.contacts', {
       url: '/contacts',
       templateUrl: '../views/contacts.html',
       controller: function($scope) {
@@ -86,7 +69,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     })
 
     //nested DATES view with custom controller
-    .state('companies.view.dates', {
+    .state('companies.dates', {
       url: '/dates',
       templateUrl: '../views/dates.html',
       controller: 'CalendarController'
