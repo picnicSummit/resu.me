@@ -6,6 +6,7 @@ angular.module('app')
 
     $scope.statusParser = function(data) {
       $scope.companyName = data.name;
+      $rootScope.currentCompany = data;
       var status = data.status;
       for (var key in status) {
         if (status[key] === true) {
