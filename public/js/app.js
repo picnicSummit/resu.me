@@ -79,8 +79,8 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     .state('login', {
       url: '/login',
       templateUrl: '../views/login.html',
-      controller: 'AuthController',
-      // onEnter: ['$state', 'auth', function($state, auth){
+      controller: 'AuthController'
+      // onEnter: ['$state', 'auth', function($state, auth) {
       //   if (auth.isLoggedIn()) {
       //     $state.go('companies');
       //   }
@@ -91,7 +91,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     .state('register', {
       url: '/register',
       templateUrl: '../views/register.html',
-      controller: 'AuthController',
+      controller: 'AuthController'
       // onEnter: ['$state', 'auth', function($state, auth){
       //   if (auth.isLoggedIn()) {
       //     $state.go('companies');

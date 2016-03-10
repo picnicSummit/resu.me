@@ -9,10 +9,8 @@ var User = require( './models/user' );
 
 module.exports = function (app) {
 
-  app.get( '/api/companies', auth, function( req, res ) {
-
+  app.get( '/api/companies', function( req, res ) {
     Company.find( {}, function(error, companies) {
-
       if ( error ) {
         res.json(error);
       } else if ( companies === null ) {
@@ -23,8 +21,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/companies/:name', auth, function(req, res) {
-    
+  app.get('/api/companies/:name', function(req, res) {
     var name = req.params.name;
     Company.find( {name: name }, function(error, company) {
       console.log('company', company);
@@ -39,10 +36,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post( '/api/companies', auth, function(req, res) {
-
-    newCompany.username = req.payload.username;
-
+  app.post( '/api/companies', function(req, res) {
     var newCompany = Company({
       name: req.body.name,
       status: {
@@ -54,6 +48,8 @@ module.exports = function (app) {
       }
     });
 
+    // newCompany.username = req.payload.username;
+
     newCompany.save(function(err) {
       res.end();
     });
@@ -64,7 +60,7 @@ module.exports = function (app) {
     res.sendfile(__dirname + '/public/test/test.html');
   });
 
-  app.delete( '/api/companies/:id', auth, function (req, res) {
+  app.delete( '/api/companies/:id', function (req, res) {
     
     var id = req.params.id;
     Company.remove({ _id: mongoose.Types.ObjectId(id) }, 
@@ -78,18 +74,13 @@ module.exports = function (app) {
     if (!req.body.username || !req.body.password) {
       return res.status(400).json({message: 'Please fill out all fields'});
     }
-
     var user = new User();
-
     user.username = req.body.username;
-
     user.setPassword(req.body.password);
-
     user.save(function (err) {
       if (err) {
         return next(err);
       }
-
       return res.json({token: user.generateJWT()});
     });
   });
@@ -98,16 +89,15 @@ module.exports = function (app) {
     if (!req.body.username || !req.body.password) {
       return res.status(400).json({message: 'Please fill out all fields'});
     }
-
     passport.authenticate('local', function(err, user, info) {
-      if (err) { return next(err); }
-
+      if (err) {
+        return next(err);
+      }
       if (user) {
         return res.json({token: user.generateJWT()});
       } else {
         return res.status(401).json(info);
       }
-
     })(req, res, next);
   });
 
