@@ -1,0 +1,13 @@
+<form ng-submit="setPhoneDate(phoneDate.value)">
+   <label for="exampleInput">Phone Interview:</label>
+   <input name="momma" type="datetime-local" ng-model="phoneDate"
+       placeholder="MM-dd"/>
+    <button type="submit">Add</button>
+</form>
+<form>
+   <label for="exampleInput">Onsite Interview:</label>
+   <input type="datetime-local" ng-model="onsiteDate"
+       placeholder="MM-dd"/>
+    <button ng-click="setOnsiteDate(onsiteDate)">Add</button>
+</form>
+

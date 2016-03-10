@@ -3,6 +3,7 @@ angular.module('app')
 
     $scope.companies = {};
     $scope.calendar;
+    $scope.currentCompany;
     $scope.googleLogin = function() {
       CompanyFactory.googleLogin()
         .then(function(data) {

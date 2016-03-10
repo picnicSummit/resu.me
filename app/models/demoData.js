@@ -9,6 +9,10 @@ module.exports = [
       'onsite': true,
       'offer': true,
       'accepted': false  
+    },
+    'dates': {
+      'onsite': 'Fri Nov 24 2000 14:15:00 GMT-0800 (Pacific Standard Time)',
+      'phone': 'Fri Nov 21 2015 14:15:00 GMT-0800 (Pacific Standard Time)'
     }
   },
 
