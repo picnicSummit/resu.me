@@ -18,6 +18,18 @@ angular.module('app')
       });
 
     };
+    var getCompany = function(name) {
+      return $http({
+        method: 'GET',
+        url: '/api/companies/' + name
+      })
+      .then( function (resp) {
+        $rootScope.$emit('showCompany', resp.data);
+      })
+      .catch( function(err) {
+        console.log( 'CompanyFactory error:', err );
+      });
+    };
 
     var addCompany = function(name) {
       return $http({
@@ -33,18 +45,6 @@ angular.module('app')
       });
     };
 
-    var googleLogin = function() {
-      return gapi.auth.authorize({
-        client_id: '503303984200-f38p65l8hpn7jjhjojng1f2knss5unv0.apps.googleusercontent.com',
-        immediate: true,
-        scope: 'https://www.googleapis.com/auth/calendar'
-      })
-        .then(getCalendar)
-        .then(function(data) {
-          return data;
-        });
-    };
-
     var deleteCompany = function(id) {
       console.log('------factory id-----', id);
       return $http({
@@ -57,8 +57,8 @@ angular.module('app')
       getAll: getAll,
       addCompany: addCompany,
       getCalendar: getCalendar,
-      googleLogin: googleLogin,
       deleteCompany: deleteCompany,
+      getCompany: getCompany
 
     };
 

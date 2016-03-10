@@ -1,11 +1,14 @@
 angular.module('app')
   .controller( 'CompaniesController', [ '$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
 
+    $scope.companies;
+
     $scope.getAll = function () {
 
       CompanyFactory.getAll()
         .then( function(data) {
-          $rootScope.companies = data;
+          console.log(data);
+          $scope.companies = data;
         })
         .catch( function(error) {
           console.error(error);
@@ -13,7 +16,12 @@ angular.module('app')
     };
 
     $scope.getCompany = function(name) {
-      $rootScope.$emit('showCompany', name);
+      // console.log(name);// -- it worked
+      CompanyFactory.getCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
+
     };
 
     $scope.addCompany = function(name) {
