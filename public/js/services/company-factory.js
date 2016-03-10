@@ -36,7 +36,7 @@ angular.module('app')
     var googleLogin = function() {
       return gapi.auth.authorize({
         client_id: '503303984200-f38p65l8hpn7jjhjojng1f2knss5unv0.apps.googleusercontent.com',
-        immediate: false,
+        immediate: true,
         scope: 'https://www.googleapis.com/auth/calendar'
       })
         .then(getCalendar)
