@@ -73,5 +73,29 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       url: '/dates',
       templateUrl: '../views/dates.html',
       controller: 'CalendarController'
-    }); 
+    }) 
+
+    //LOGIN page
+    .state('login', {
+      url: '/login',
+      templateUrl: '../views/login.html',
+      controller: 'AuthController',
+      // onEnter: ['$state', 'auth', function($state, auth){
+      //   if (auth.isLoggedIn()) {
+      //     $state.go('companies');
+      //   }
+      // }]
+    })
+
+    //REGISTER page
+    .state('register', {
+      url: '/register',
+      templateUrl: '../views/register.html',
+      controller: 'AuthController',
+      // onEnter: ['$state', 'auth', function($state, auth){
+      //   if (auth.isLoggedIn()) {
+      //     $state.go('companies');
+      //   }
+      // }]
+    });
 });
