@@ -30,6 +30,8 @@ angular.module('app')
         return;
       }
 
+      $scope.companyName = name;
+
       CompanyFactory.addCompany(name)
         .then( function (data) {
           $scope.name = '';
