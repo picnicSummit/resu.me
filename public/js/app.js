@@ -77,12 +77,18 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     })
 
      // nested CONTACTS view with custom controller
-    .state('companies.view.`contacts', {
+    .state('companies.view.contacts', {
       url: '/contacts',
       templateUrl: '../views/contacts.html',
       controller: function($scope) {
         $scope.data = 'these are our contacts';
       }
-    });
-        
+    })
+
+    //nested DATES view with custom controller
+    .state('companies.view.dates', {
+      url: '/dates',
+      templateUrl: '../views/dates.html',
+      controller: 'CalendarController'
+    }); 
 });
