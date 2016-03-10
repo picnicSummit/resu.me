@@ -1,7 +1,14 @@
+// set up ======================================================================
 var express = require('express');
 var mongoose = require('mongoose');
-var Company = require( './app/models/company' );
 var bodyParser = require('body-parser');
+var passport = require('passport');
+
+var Company = require( './app/models/company' );
+var Users = require( './app/models/users' );
+var ConfigPassport = require( './config/passport' );
+
+// configuration ===============================================================
 var app = express();
 
 app.use(bodyParser.json()); // support json encoded bodies
@@ -17,6 +24,10 @@ mongoose.connect( dbURI );
 // Serve index.html file (detected automatically in specified directory)
 app.use( express.static( __dirname + '/public') );
 
+app.use( passport.initialize() );
+
+
+// listen (start app with node server.js) ======================================
 app.listen( port, function () {
   console.log( 'server listening on port ' + port + '...\n' );
 });
@@ -44,62 +55,8 @@ mongoose.connection.on( 'connected', function () {
   }
 });
 
+// routes ======================================================================
+require('./app/routes.js')(app);
 
-// handle this elsewhere...
 
-app.get( '/api/companies', function( req, res ) {
-
-  Company.find( {}, function(error, companies) {
-
-    if ( error ) {
-      res.json(error);
-    } else if ( companies === null ) {
-      res.json('Empty data');
-    } else {
-      res.json(companies);
-    }      
-  });
-});
-
-app.get('/api/companies/:name', function(req, res) {
-  
-  var name = req.params.name;
-  Company.find( {name: name }, function(error, company) {
-    console.log('company', company);
-    if (error) {
-      console.log('error', error);
-      res.json(error);
-    } else if ( company === null ) {
-      res.json('Empty data');
-    } else {
-      res.json(company);
-    }
-  });
-});
-
-app.post( '/api/companies', function(req, res) {
-
-  var newCompany = Company({
-    name: req.body.name
-  });
-
-  newCompany.save(function(err) {
-    res.end();
-  });
-
-});
-
-app.get( '/test', function(req, res) {
-  res.sendfile(__dirname + '/public/test/test.html');
-});
-
-app.delete( '/api/companies/:id', function (req, res) {
-  
-  var id = req.params.id;
-  Company.remove({ _id: mongoose.Types.ObjectId(id) }, 
-    function(err, doc) {
-      res.json(doc);
-    });
-
-});
 
