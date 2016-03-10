@@ -4,16 +4,5 @@ angular.module('app')
     $scope.companies = {};
     $scope.calendar;
     $scope.currentCompany;
-    $scope.googleLogin = function() {
-      CompanyFactory.googleLogin()
-        .then(function(data) {
-          var piece = encodeURIComponent(data.result.items[0].id);
-          var url = 'https://calendar.google.com/calendar/embed?src=' + piece;
 
-          $scope.calendar = $sce.trustAsResourceUrl(url);
-
-        });
-    };
-
-    $scope.googleLogin();
   }]);
