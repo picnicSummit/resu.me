@@ -37,7 +37,14 @@ module.exports = function (app) {
   app.post( '/api/companies', function(req, res) {
 
     var newCompany = Company({
-      name: req.body.name
+      name: req.body.name,
+      status: {
+        applied: false,
+        phone: false,
+        onsite: false,
+        offer: false,
+        accepted: false 
+      }
     });
 
     newCompany.save(function(err) {
