@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 
 var Company = require( './app/models/company' );
-var Users = require( './app/models/users' );
+var User = require( './app/models/user' );
 var ConfigPassport = require( './config/passport' );
 
 // configuration ===============================================================
@@ -24,6 +24,7 @@ mongoose.connect( dbURI );
 // Serve index.html file (detected automatically in specified directory)
 app.use( express.static( __dirname + '/public') );
 
+//initialize passport
 app.use( passport.initialize() );
 
 
