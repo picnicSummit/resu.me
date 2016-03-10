@@ -1,3 +1,5 @@
+var Company = require( './models/company' );
+
 module.exports = function (app) {
 
   app.get( '/api/companies', function( req, res ) {
