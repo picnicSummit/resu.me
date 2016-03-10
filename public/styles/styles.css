@@ -148,10 +148,6 @@ iframe {
   Individual Company Styles
 *********************************/
 
-.one-co {
-  background-color: lightyellow;
-}
-
 .company-name {
   text-align: center;
 }
@@ -202,11 +198,37 @@ iframe {
 }
 
 .task-edit-area {
-  min-height: 500px;
-  background-color: white;
-  text-align: center; /* temp hack for demo purposes */
+  position: relative;
+}
+
+.task-edit-area header {
+  text-align: center;
+  font-size: 18px;
+}
+
+.task-edit-area header > .title {
+  margin-top: 20px;
+  text-transform: uppercase;
+  min-height: 800px;
+}
+
+.taskdoc-link {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  text-decoration: underline;
+}
+
+.taskdoc-container {
+  position: absolute;
+  overflow-x: scroll;
+  top: 40px;
+  width: 100%;
 }
 
 .task-edit-area iframe {
   height: 1000px;
+  width: 100%;
 }
+
+
