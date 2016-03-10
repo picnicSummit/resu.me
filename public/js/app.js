@@ -34,7 +34,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     .state('companies.calendar', {
       url: '/calendar',
       templateUrl: '../views/calendar.html',
-      controller: 'CalendarController'
+      controller: 'MasterController'
     })
 
     //nested COMPANY-VIEW state inside of companies

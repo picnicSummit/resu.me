@@ -2,10 +2,10 @@ angular.module('app')
   .controller( 'CompanyController', ['$rootScope', '$sce', '$scope', 'CompanyFactory', function( $rootScope, $sce, $scope, CompanyFactory ) {
 
     $scope.status = [];
-    console.log($rootScope.companies);
-    $scope.companyName = $rootScope.companies[0].name;
+    $scope.companyName;
 
     $scope.statusParser = function(data) {
+      $scope.companyName = data.name;
       var status = data.status;
       for (var key in status) {
         if (status[key] === true) {
