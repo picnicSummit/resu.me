@@ -1,3 +1,5 @@
+var express = require('express');
+var mongoose = require('mongoose');
 var Company = require( './models/company' );
 
 module.exports = function (app) {
