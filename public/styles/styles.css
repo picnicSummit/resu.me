@@ -12,7 +12,7 @@ html {
   line-height: 10vh; /* vert. center text hack */
   padding-left: 3vw;
   padding-right: 4vw;
-  background-color: rgba(0,0,255,0.6);
+  background-color: #799dbb;
   color: white;
   text-transform: uppercase;
 }
@@ -71,7 +71,7 @@ html {
 }
 
 .tagline {
-  color: indigo;
+  color: #3c4e5d;
   font-style: italic;
   font-weight: bold;
   font-size: 20px;
@@ -95,7 +95,7 @@ html {
 }
 
 .description {
-  color: indigo;
+  color: #3c4e5d;
   margin: 32px auto 0 auto;
   width: 200px;
   font-size: 14px;
@@ -123,13 +123,13 @@ html {
 }
 
 .promo-block.visual {
-  background-color: rgba(0,0,255,0.4);
+  background-color: #6891b2;
   color: white;
   border-radius: 5px;
 }
 
 .promo-block.other {
-  color: indigo;
+  color: #000000;
 }
 
 .video-frame {
@@ -272,10 +272,17 @@ iframe {
 }
  
 .regAndLog {
+  text-decoration-color: white;
   width: 250px;
   height: 35px;
+  background-color: #428BCA;
   border-bottom-left-radius: 5px;
-   border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+}
+
+.fontColor {
+  color: white;
+  font-family: Arial;
 }
