@@ -6,23 +6,31 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var Company = require( './models/company' );
 var User = require( './models/user' );
+var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function (app) {
 
-  app.get( '/api/companies', function( req, res ) {
-
-    Company.find( {}, function(error, companies) {
-      if ( error ) {
-        res.json(error);
-      } else if ( companies === null ) {
-        res.json('Empty data');
-      } else {
-        res.json(companies);
-      }      
-    });
+  app.get( '/api/companies/:id', function( req, res ) {
+    console.log('88888888888', req.params.id);
+    var id = new ObjectID(req.params.id);
+    User
+      .findOne({ id: id })
+      .populate('_creator')
+      .exec(function(error, companies) {
+        if ( error ) {
+          console.log(error);
+          res.json(error);
+        } else if ( companies === null ) {
+          console.log(companies);
+          res.json('Empty data');
+        } else {
+          console.log(companies);
+          res.json(companies);
+        }      
+      });
   });
 
-  app.get('/api/companies/:name', function(req, res) {
+  app.get('/api/companies/:id', function(req, res) {
 
     var name = req.params.name;
     Company.find( {name: name }, function(error, company) {
@@ -40,21 +48,13 @@ module.exports = function (app) {
 
   app.post( '/api/companies', function(req, res) {
 
-    var newCompany = Company({
-      name: req.body.name,
-      status: {
-        applied: false,
-        phone: false,
-        onsite: false,
-        offer: false,
-        accepted: false 
-      }
-    });
-
-    // console.log('---------app.post newCompany.username ---------', req.payload);
-    // newCompany.username = req.payload.username;
-
+    var newCompany = Company(req.body);
     newCompany.save(function(err) {
+      Company.populate(newCompany, {path: '_creator'}, function(error, success) {
+        console.log(error);
+        console.log('888888', success);
+      });
+      console.log(err);
       res.end();
     });
 
@@ -73,7 +73,7 @@ module.exports = function (app) {
       });
 
   });
-
+  //can't go to register if logged in
   app.post('/register', function(req, res, next) {
     if (!req.body.username || !req.body.password) {
       return res.status(400).json({message: 'Please fill out all fields'});
@@ -81,11 +81,14 @@ module.exports = function (app) {
     var user = new User();
     user.username = req.body.username;
     user.setPassword(req.body.password);
-    user.save(function (err) {
+    user.save(function (err, success) {
       if (err) {
         return next(err);
       }
-      return res.json({token: user.generateJWT()});
+      return res.json({
+        userId: success._id,
+        token: user.generateJWT()
+      });
     });
   });
 
@@ -98,8 +101,13 @@ module.exports = function (app) {
         return next(err);
       }
       if (user) {
-        return res.json({token: user.generateJWT()});
+        console.log(user);
+        return res.json({
+          userId: user._id,
+          token: user.generateJWT()
+        });
       } else {
+        console.log('no user');
         return res.status(401).json(info);
       }
     })(req, res, next);

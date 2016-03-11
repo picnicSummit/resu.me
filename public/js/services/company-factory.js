@@ -1,13 +1,16 @@
 angular.module('app')
-  .factory( 'CompanyFactory', ['$rootScope', '$http', function($rootScope, $http) {
+  .factory( 'CompanyFactory', ['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
 
-    var firstCompany;
+    if ($window.localStorage['job-hunt-token']) {
+
+    }
 
     var getAll = function() {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
 
       return $http({
         method: 'GET',
-        url: '/api/companies'
+        url: '/api/companies/' + userId.userId,
       })
       .then( function (resp) {
         $rootScope.$emit('showCompany', resp.data);
@@ -32,10 +35,23 @@ angular.module('app')
     };
 
     var addCompany = function(name) {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      console.log('inside addcompah', userId.userId);
+
       return $http({
         method: 'POST',
         url: '/api/companies',
-        data: { name }
+        data: { 
+          name: name,
+          _creator: userId.userId,
+          status: {
+            applied: false,
+            phone: false,
+            onsite: false,
+            offer: false,
+            accepted: false 
+          }
+        }
       });
     };
 

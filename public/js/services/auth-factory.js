@@ -4,8 +4,8 @@ angular.module('app')
     var auth = {};
     
     auth.saveToken = function(token) {
-      $window.localStorage['job-hunt-token'] = token;
-
+      console.log(token);
+      $window.localStorage['job-hunt-token'] = JSON.stringify(token);
     };
 
     auth.getToken = function() {
@@ -33,14 +33,14 @@ angular.module('app')
     auth.register = function(user) {
       return $http.post( '/register', user )
         .success(function(data) {
-          auth.saveToken(data.token);
+          auth.saveToken(data);
         });
     };
 
     auth.login = function(user) {
       return $http.post( '/login', user )
         .success(function(data) {
-          auth.saveToken(data.token);
+          auth.saveToken(data);
         });
     };
 

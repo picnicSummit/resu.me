@@ -7,7 +7,6 @@ angular.module('app')
 
       CompanyFactory.getAll()
         .then( function(data) {
-          console.log(data);
           $scope.companies = data;
         })
         .catch( function(error) {
@@ -25,7 +24,7 @@ angular.module('app')
     };
 
     $scope.addCompany = function(name) {
-
+      //TODO error if no company name
       if ( name === '') {
         return;
       }

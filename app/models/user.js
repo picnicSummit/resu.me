@@ -7,10 +7,9 @@ var Company = mongoose.model('Company');
 var UserSchema = new Schema({
 	
   username: { type: String, lowercase: true, unique: true },
-  companies: [Company],
+  companies: [{ type: Schema.Types.ObjectId, ref: 'Company' }],
   hash: String,
   salt: String
-
 });
 
 UserSchema.methods.setPassword = function(password) {
