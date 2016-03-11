@@ -25,7 +25,7 @@ angular.module('app')
     };
 
     $scope.addCompany = function(name) {
-      // console.log(name);
+
       if ( name === '') {
         return;
       }
@@ -37,10 +37,12 @@ angular.module('app')
         .catch( function(error) {
           console.error(error);
         });
+
       $scope.getAll();
     };
 
     $scope.deleteCompany = function(id) {
+
       if ( !confirm('Are you sure you want to delete this company?') ) {
         return;
       }
@@ -49,7 +51,9 @@ angular.module('app')
         .catch( function(error) {
           console.error(error);
         });
+        
       $scope.getAll();
+
     };
 
     $scope.appliedToCompany = function() {
