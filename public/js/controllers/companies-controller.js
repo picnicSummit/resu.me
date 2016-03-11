@@ -37,7 +37,7 @@ angular.module('app')
         .catch( function(error) {
           console.error(error);
         });
-  
+
       $scope.getAll();
     };
 

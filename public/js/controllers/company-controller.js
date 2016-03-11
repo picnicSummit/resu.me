@@ -5,9 +5,11 @@ angular.module('app')
     $scope.status = [];
     $scope.companyName;
     $scope.calendar = '';
+    $scope.companies;
 
 
     $scope.statusParser = function(data) {
+      $scope.companyName = data.name;
       var status = data[0].status;
       for (var key in status) {
         if (status[key] === true) {

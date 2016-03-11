@@ -6,6 +6,7 @@ var passport = require('passport');
 
 var Company = require( './app/models/company' );
 var User = require( './app/models/user' );
+
 var ConfigPassport = require( './config/passport' );
 
 // configuration ===============================================================
