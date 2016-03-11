@@ -231,4 +231,20 @@ iframe {
   width: 100%;
 }
 
+.login-background {
+  background: url("../images/loginBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 60%; /* offset, for image-specific focal point */
+  height: 90vh; /* combined with menu = 100% screen height */
+}
 
+.loginWrapper {
+  width: 320px;
+  padding: 8px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 5px;
+  top: 13%;
+  position: relative;
+}

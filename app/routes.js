@@ -1,6 +1,7 @@
 var express = require('express');
 var jwt = require('express-jwt');
 var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
+
 var mongoose = require('mongoose');
 var passport = require('passport');
 var Company = require( './models/company' );
@@ -9,7 +10,7 @@ var User = require( './models/user' );
 
 module.exports = function (app) {
 
-  app.get( '/api/companies', auth, function( req, res ) {
+  app.get( '/api/companies', function( req, res ) {
     Company.find( {}, function(error, companies) {
       if ( error ) {
         res.json(error);
@@ -21,7 +22,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/api/companies/:name', auth, function(req, res) {
+  app.get('/api/companies/:name', function(req, res) {
     var name = req.params.name;
     Company.find( {name: name }, function(error, company) {
       console.log('company', company);
@@ -36,7 +37,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post( '/api/companies', auth, function(req, res) {
+  app.post( '/api/companies', function(req, res) {
     var newCompany = Company({
       name: req.body.name,
       status: {
@@ -48,7 +49,8 @@ module.exports = function (app) {
       }
     });
 
-    // newCompany.username = req.payload.username;
+    console.log('---------app.post newCompany.username ---------', newCompany.username);
+    newCompany.username = req.payload.username;
 
     newCompany.save(function(err) {
       res.end();
@@ -60,7 +62,7 @@ module.exports = function (app) {
     res.sendfile(__dirname + '/public/test/test.html');
   });
 
-  app.delete( '/api/companies/:id', auth, function (req, res) {
+  app.delete( '/api/companies/:id', function (req, res) {
     
     var id = req.params.id;
     Company.remove({ _id: mongoose.Types.ObjectId(id) }, 

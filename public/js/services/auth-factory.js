@@ -23,7 +23,7 @@ angular.module('app')
     };
 
     auth.currentUser = function() {
-      if (auth.isLoggedIn()) {
+      if ( auth.isLoggedIn() ) {
         var token = auth.getToken();
         var payload = JSON.parse( $window.atob( token.split('.')[1]) );
         return payload.username;
@@ -44,7 +44,7 @@ angular.module('app')
         });
     };
 
-    auth.logout = function() {
+    auth.logOut = function() {
       $window.localStorage.removeItem('job-hunt-token');
     };
 

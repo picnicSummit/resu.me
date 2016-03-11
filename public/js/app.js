@@ -92,10 +92,11 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       url: '/register',
       templateUrl: '../views/register.html',
       controller: 'AuthController',
-      onEnter: ['$state', 'auth', function($state, auth){
+      onEnter: ['$state', 'auth', function($state, auth) {
         if (auth.isLoggedIn()) {
           $state.go('companies');
         }
       }]
     });
+    
 });
