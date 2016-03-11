@@ -49,8 +49,8 @@ module.exports = function (app) {
       }
     });
 
-    console.log('---------app.post newCompany.username ---------', newCompany.username);
-    newCompany.username = req.payload.username;
+    // console.log('---------app.post newCompany.username ---------', req.payload);
+    // newCompany.username = req.payload.username;
 
     newCompany.save(function(err) {
       res.end();

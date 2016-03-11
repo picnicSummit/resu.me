@@ -20,7 +20,7 @@
     <!-- menu bar on EVERY page (maybe replace wi. Bootstrap navbar) -->
     <div class="menu-bar">
       <span class="branding">Job Hunt</span>
-      <nav class="navbar navbar-default pull-right" ng-controller="NavigationController">
+      <nav class="navbar navbar-default pull-right" ng-controller="NavigationController" style="margin-top:10px;">
         <ul class="nav navbar-nav">
           <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
           <li ng-show="isLoggedIn()"><a ng-click="logOut()">Log Out</a></li>

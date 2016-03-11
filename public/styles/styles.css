@@ -231,7 +231,7 @@ iframe {
   width: 100%;
 }
 
-.login-background {
+.loginReg-background {
   background: url("../images/loginBackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -239,12 +239,43 @@ iframe {
   height: 90vh; /* combined with menu = 100% screen height */
 }
 
-.loginWrapper {
+.loginRegBox {
   width: 320px;
-  padding: 8px;
+  padding: 20px;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, .3);
-  border-radius: 5px;
-  top: 13%;
+  border-radius: 10px;
+  top: 18%;
   position: relative;
+}
+
+.loginRegBox input {
+  padding: 11px;
+  font-size: 14px;
+  display: block;
+  margin: 7px auto;
+  border: 1px solid #7D7D7D;
+  border-radius: 4px;
+  width: 250px;
+}
+
+
+.loginError {
+    border: 1px solid #FFA1A1;
+    background-color: rgba(255, 184, 184, 0.8);
+    color: #2D2D2D;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial;
+    box-shadow: 0px 0px 15px 3px #FF2828;
+    border-radius: 2px;
+}
+ 
+.regAndLog {
+  width: 250px;
+  height: 35px;
+  border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
