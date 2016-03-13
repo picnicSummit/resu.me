@@ -4,7 +4,6 @@ angular.module('app')
     $scope.companyId;
 
     $rootScope.$on('showCompany', function(event, data) {
-      $scope.companyId = data._id;
       $scope.applied = null;
       $scope.phoneDate = null;
       $scope.onsiteDate = null;
@@ -12,6 +11,7 @@ angular.module('app')
         $scope.applied = true;
       }
       if (data && data.dates) {
+        $scope.companyId = data._id;
         if (data.dates.phone) {
           var phone = new Date(data.dates.phone);
           $scope.phoneDate = phone;

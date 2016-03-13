@@ -39,22 +39,6 @@ mongoose.connection.on( 'connected', function () {
 
   console.log( 'successful db connection to: ' + dbURI + '\n' );
 
-  if ( app.get('env') === 'development' ) {
-
-    var demoData = require( './app/models/demoData' );
-
-    Company.remove().exec(); // clear database
-
-    Company.collection.insertMany( demoData, function( err, r ) {
-
-      if ( err ) {
-        console.log( 'error loading demo data:', err );
-      } else {
-        console.log( 'seeded database with ' + r.insertedCount + ' records\n' );
-      }
-    });
-
-  }
 });
 
 // routes ======================================================================
