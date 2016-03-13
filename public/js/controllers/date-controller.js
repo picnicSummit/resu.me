@@ -7,11 +7,13 @@ angular.module('app')
       $scope.applied = null;
       $scope.phoneDate = null;
       $scope.onsiteDate = null;
+      if (data) {
+        $scope.companyId = data._id;
+      }
       if (data && data.status.applied) {
         $scope.applied = true;
       }
       if (data && data.dates) {
-        $scope.companyId = data._id;
         if (data.dates.phone) {
           var phone = new Date(data.dates.phone);
           $scope.phoneDate = phone;
