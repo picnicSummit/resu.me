@@ -9,8 +9,9 @@ angular.module('app')
 
 
     $scope.statusParser = function(data) {
+      console.log(data);
       $scope.companyName = data.name;
-      var status = data[0].status;
+      var status = data.status;
       for (var key in status) {
         if (status[key] === true) {
           $scope.status.push({
@@ -29,9 +30,10 @@ angular.module('app')
 
     $rootScope.$on('showCompany', function(event, data) {
       $scope.status = [];
-
-      $scope.statusParser(data);
-      $scope.companyName = data[0].name;
+      $scope.companyName = null;
+      if (data) {
+        $scope.statusParser(data);
+      }
     });
 
   }]);

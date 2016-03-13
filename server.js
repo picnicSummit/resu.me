@@ -17,7 +17,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 var port = process.env.PORT || 4568;
-var dbURI = 'mongodb://localhost/jobhunt';
+var dbURI = 'mongodb://heroku_qbvl1qx6:u764ejr6tc2u04ht5lms87vdm0@ds011389.mlab.com:11389/heroku_qbvl1qx6';
 
 
 mongoose.connect( dbURI );
@@ -39,22 +39,6 @@ mongoose.connection.on( 'connected', function () {
 
   console.log( 'successful db connection to: ' + dbURI + '\n' );
 
-  if ( app.get('env') === 'development' ) {
-
-    var demoData = require( './app/models/demoData' );
-
-    Company.remove().exec(); // clear database
-
-    Company.collection.insertMany( demoData, function( err, r ) {
-
-      if ( err ) {
-        console.log( 'error loading demo data:', err );
-      } else {
-        console.log( 'seeded database with ' + r.insertedCount + ' records\n' );
-      }
-    });
-
-  }
 });
 
 // routes ======================================================================

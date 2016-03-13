@@ -10,7 +10,11 @@ var companySchema = new Schema({
     onsite: Boolean,
     offer: Boolean,
     accepted: Boolean 
-  }
+  },
+  dates: {
+    phone: Date,
+    onsite: Date
+  },
 
 });
 

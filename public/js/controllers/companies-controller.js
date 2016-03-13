@@ -7,8 +7,8 @@ angular.module('app')
 
       CompanyFactory.getAll()
         .then( function(data) {
-          console.log(data);
-          $scope.companies = data;
+          $rootScope.$emit('showCompany', data.companies[0]);
+          $scope.companies = data.companies;
         })
         .catch( function(error) {
           console.error(error);
@@ -16,7 +16,6 @@ angular.module('app')
     };
 
     $scope.getCompany = function(name) {
-      // console.log(name);// -- it worked
       CompanyFactory.getCompany(name)
         .catch( function(error) {
           console.error(error);
@@ -25,7 +24,7 @@ angular.module('app')
     };
 
     $scope.addCompany = function(name) {
-
+      //TODO error if no company name
       if ( name === '') {
         return;
       }
@@ -46,7 +45,6 @@ angular.module('app')
       if ( !confirm('Are you sure you want to delete this company?') ) {
         return;
       }
-      //console.log(id);
       CompanyFactory.deleteCompany(id)
         .catch( function(error) {
           console.error(error);
@@ -61,5 +59,4 @@ angular.module('app')
     };
     
     $scope.getAll();
-
   }]);
