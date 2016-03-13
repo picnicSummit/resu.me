@@ -10,69 +10,135 @@ var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function (app) {
 
-  app.get( '/api/companies/:id', function( req, res ) {
-    console.log('88888888888', req.params.id);
-    var id = new ObjectID(req.params.id);
+  //THIS GETS ALL COMPANIES FOR ONE USER
+  app.get( '/api/:user/companies', function( req, res ) {
+    var id = new ObjectID(req.params.user);
     User
-      .findOne({ id: id })
-      .populate('_creator')
+      .findOne({ _id: id })
       .exec(function(error, companies) {
         if ( error ) {
-          console.log(error);
           res.json(error);
-        } else if ( companies === null ) {
-          console.log(companies);
-          res.json('Empty data');
         } else {
-          console.log(companies);
           res.json(companies);
         }      
       });
   });
 
-  app.get('/api/companies/:id', function(req, res) {
-
-    var name = req.params.name;
-    Company.find( {name: name }, function(error, company) {
-      console.log('company', company);
-      if (error) {
-        console.log('error', error);
-        res.json(error);
-      } else if ( company === null ) {
-        res.json('Empty data');
-      } else {
-        res.json(company);
-      }
-    });
+  //THIS GETS ONE COMPANY
+  app.get('/api/:user/companies/:company', function(req, res) {
+    var id = new ObjectID(req.params.user);
+    var company = req.params.company;
+    console.log(company);
+    User
+      .findOne({ _id: id })
+      .exec(function(error, user) {
+        if ( error ) {
+          res.json(error);
+        } else {
+          for (var i = 0; i < user.companies.length; i++) {
+            if (user.companies[i].name === company) {
+              res.json(user.companies[i]);
+            }
+          }
+        }      
+      });
   });
 
-  app.post( '/api/companies', function(req, res) {
-
+  //THIS ADDS A COMPANY TO A USER
+  app.post( '/api/:user/companies', function(req, res) {
+    var id = new ObjectID(req.params.user);
     var newCompany = Company(req.body);
-    newCompany.save(function(err) {
-      Company.populate(newCompany, {path: '_creator'}, function(error, success) {
-        console.log(error);
-        console.log('888888', success);
+    User
+      .findOne({_id: id}, function(error, user) {
+        if (error) {
+          console.log(error);
+        }
+        user.companies.push(newCompany);
+        user.save(function(err) {
+          if (err) {
+            console.log(err);
+          }
+        });
+        console.log(user);
+        res.json(newCompany);
       });
-      console.log(err);
-      res.end();
-    });
-
   });
 
-  app.get( '/test', function(req, res) {
-    res.sendfile(__dirname + '/public/test/test.html');
+  app.delete( '/api/:user/companies/:company', function (req, res) {
+    var id = new ObjectID(req.params.user);
+    var company = new ObjectID(req.params.company);
+    User
+      .update(
+        {_id: id},
+        { $pull: { companies: {_id: company } } }, 
+        function(error, user) {
+          if (error) {
+            console.log(error);
+          }
+          res.json(user);
+        });
   });
 
-  app.delete( '/api/companies/:id', function (req, res) {
-    
-    var id = req.params.id;
-    Company.remove({ _id: mongoose.Types.ObjectId(id) }, 
-      function(err, doc) {
-        res.json(doc);
-      });
+  //ADDING DATES TO COMPANY
+  app.post('/api/:user/companies/:company/phone', function(req, res) {
+    var id = new ObjectID(req.params.user);
+    var company = new ObjectID(req.params.company);
+    console.log(req.body);
+    User
+      .findOneAndUpdate(
+        {'_id': id, 'companies._id': company},
+        { '$set': { 
+          'companies.$.dates.phone': req.body.date,
+          'companies.$.status.phone': true 
+        } }, 
+        function(error, user) {
+          if (error) {
+            console.log(error);
+          }
+          console.log(user);
+          res.json(user);
+        });
+  }); 
 
-  });
+  app.post('/api/:user/companies/:company/onsite', function(req, res) {
+    var id = new ObjectID(req.params.user);
+    var company = new ObjectID(req.params.company);
+    console.log(req.body);
+    User
+      .findOneAndUpdate(
+        {'_id': id, 'companies._id': company},
+        { '$set': { 
+          'companies.$.dates.onsite': req.body.date,
+          'companies.$.status.onsite': true 
+        } }, 
+        function(error, user) {
+          if (error) {
+            console.log(error);
+          }
+          console.log(user);
+          res.json(user);
+        });
+  }); 
+
+  app.post('/api/:user/companies/:company/applied', function(req, res) {
+    var id = new ObjectID(req.params.user);
+    var company = new ObjectID(req.params.company);
+    console.log(req.body);
+    User
+      .findOneAndUpdate(
+        {'_id': id, 'companies._id': company},
+        { '$set': { 
+          'companies.$.status.applied': true,
+        } }, 
+        function(error, user) {
+          if (error) {
+            console.log(error);
+          }
+          console.log(user);
+          res.json(user);
+        });
+  }); 
+
   //can't go to register if logged in
   app.post('/register', function(req, res, next) {
     if (!req.body.username || !req.body.password) {
@@ -112,5 +178,6 @@ module.exports = function (app) {
       }
     })(req, res, next);
   });
+
 
 };

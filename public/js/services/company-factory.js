@@ -1,19 +1,14 @@
 angular.module('app')
   .factory( 'CompanyFactory', ['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
 
-    if ($window.localStorage['job-hunt-token']) {
-
-    }
-
     var getAll = function() {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
 
       return $http({
         method: 'GET',
-        url: '/api/companies/' + userId.userId,
+        url: '/api/' + userId.userId + '/companies/'
       })
       .then( function (resp) {
-        $rootScope.$emit('showCompany', resp.data);
         return resp.data;
       })
       .catch( function(err) {
@@ -22,9 +17,10 @@ angular.module('app')
 
     };
     var getCompany = function(name) {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
       return $http({
         method: 'GET',
-        url: '/api/companies/' + name
+        url: '/api/' + userId.userId + '/companies/' + name
       })
       .then( function (resp) {
         $rootScope.$emit('showCompany', resp.data);
@@ -40,41 +36,69 @@ angular.module('app')
 
       return $http({
         method: 'POST',
-        url: '/api/companies',
+        url: '/api/' + userId.userId + '/companies/',
         data: { 
           name: name,
-          _creator: userId.userId,
           status: {
-            applied: false,
-            phone: false,
+            accepted: false,
+            offer: false, 
             onsite: false,
-            offer: false,
-            accepted: false 
+            phone: false,
+            applied: false
           }
         }
       });
     };
 
-    var getCalendar = function() {
-      return gapi.client.request({
-        path: 'https://www.googleapis.com/calendar/v3/users/me/calendarList'
+    var deleteCompany = function(id) {
+      console.log('------factory id-----', id);
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      return $http({
+        method: 'DELETE',
+        url: '/api/' + userId.userId + '/companies/' + id
       });
     };
 
-    var deleteCompany = function(id) {
-      console.log('------factory id-----', id);
+    var setPhoneDate = function(date, company, type) {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
       return $http({
-        method: 'DELETE',
-        url: '/api/companies/' + id
+        method: 'POST',
+        url: '/api/' + userId.userId + '/companies/' + company + '/phone',
+        data: {
+          type: type,
+          date: date
+        }
+      });
+    };
+
+    var setOnsiteDate = function(date, company, type) {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      return $http({
+        method: 'POST',
+        url: '/api/' + userId.userId + '/companies/' + company + '/onsite',
+        data: {
+          type: type,
+          date: date
+        }
+      });
+    };
+
+    var applied = function() {
+      console.log('hi')
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      return $http({
+        method: 'POST',
+        url: '/api/' + userId.userId + '/companies/' + company + '/applied',
       });
     };
 
     return {
       getAll: getAll,
       addCompany: addCompany,
-      getCalendar: getCalendar,
       deleteCompany: deleteCompany,
-      getCompany: getCompany
+      getCompany: getCompany,
+      setPhoneDate: setPhoneDate,
+      setOnsiteDate: setOnsiteDate
 
     };
 

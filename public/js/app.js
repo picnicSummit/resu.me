@@ -72,7 +72,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     .state('companies.dates', {
       url: '/dates',
       templateUrl: '../views/dates.html',
-      controller: 'CalendarController'
+      controller: 'DateController'
     }) 
 
     //LOGIN page

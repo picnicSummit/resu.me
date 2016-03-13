@@ -40,6 +40,7 @@ angular.module('app')
     auth.login = function(user) {
       return $http.post( '/login', user )
         .success(function(data) {
+          console.log(data);
           auth.saveToken(data);
         });
     };

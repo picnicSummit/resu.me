@@ -3,11 +3,12 @@ var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 var Company = mongoose.model('Company');
+var CompanySchema = require('./company').schema;
 
 var UserSchema = new Schema({
 	
   username: { type: String, lowercase: true, unique: true },
-  companies: [{ type: Schema.Types.ObjectId, ref: 'Company' }],
+  companies: [CompanySchema],
   hash: String,
   salt: String
 });

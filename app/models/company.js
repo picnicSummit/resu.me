@@ -15,7 +15,6 @@ var companySchema = new Schema({
     phone: Date,
     onsite: Date
   },
-  _creator: { type: String, ref: 'User' },
 
 });
 
