@@ -286,3 +286,9 @@ iframe {
   color: white;
   font-family: Arial;
 }
+
+.member {
+  color: #000000;
+  font-family: Arial;
+  font-weight: bold;
+}
