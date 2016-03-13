@@ -1,11 +1,16 @@
 /********************************
-  Shared Elements (in all views)
+      Top-Level Elements
 *********************************/
 
 html {
   font-family: sans-serif;
   overflow-x: hidden; /* prevents horiz scrollbar when using vh for full-screen image */
 }
+
+
+/********************************
+           Menu Bar
+*********************************/
 
 .menu-bar {
   height: 10vh;
@@ -51,7 +56,7 @@ html {
 
 
 /********************************
-     Landing Page Elements
+        Splash Screen
 *********************************/
 
 .image-area {
@@ -111,6 +116,11 @@ html {
   margin: 10px 0;
 }
 
+
+/********************************
+    Other Home Page Elements
+*********************************/
+
 .promo-strip {
   min-height: 360px;
   margin-top: 60px;
@@ -145,7 +155,93 @@ iframe {
 
 
 /********************************
-  Individual Company Styles
+      Company List View
+*********************************/
+
+.company-selector-panel {
+  position: relative;
+  min-height: 90vh;
+  border-right: 1px solid gray;
+}
+
+/* fill the region */
+.company-selector-panel .listframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.add-company-frame {
+  color: indigo;
+  margin: 12px;
+  padding: 2px;
+  border: 1px solid rgba(100,100,255,0.4);
+  border-radius: 3px;
+}
+
+.add-company-frame input[type="text"] {
+  width: 80%;
+  float: left;
+  text-align: center;
+  padding:2px;
+  border-width:0;
+}
+
+.add-company-frame button {
+  width: 18%;
+  float: left;
+  padding:2px;
+  margin-left: 2px;
+  border-width:0;
+  border-radius: 3px;
+}
+
+.add-company-frame button:hover {
+  background-color: rgba(100,100,255,0.4);
+}
+
+/* remove default <ul> list styles */
+.company-selector-panel ul {
+  padding: 0 20px 5px 20px;
+  margin: 0;
+  list-style: none;
+}
+
+.company-selector-panel li {
+  margin-top: 6px;
+}
+
+.list-element {
+  display: block;
+  background-color: rgba(100,100,255,0.2);
+  color: rgba(0,0,255,0.65);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 2px;
+  cursor: default;
+}
+
+.list-element .glyphicon {
+  color: green;
+  margin-right: 4px;
+}
+
+.list-element:hover {
+  background-color: rgba(0,0,255,0.4);
+  color: white;
+}
+
+.list-element[selected] {
+  background-color: rgba(0,0,255,0.6);
+  color: white;
+}
+
+
+/********************************
+      Company Details View
 *********************************/
 
 .company-name {
