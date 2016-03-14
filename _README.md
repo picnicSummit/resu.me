@@ -4,9 +4,9 @@
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Kathleen Lopez
+  - __Scrum Master__: Colin McDonald
+  - __Lead Developer__: Andy Lloyd
 
 ## Table of Contents
 
@@ -20,31 +20,43 @@
 
 ## Usage
 
-> Some usage instructions
+> To work on this project, fork and clone this repo.
 
-## Requirements
+## Dependencies
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+### NPM
+
+- Angular-ui-bootstrap
+- Express
+- Express-jwt
+- JSONWebToken
+- MongoDB
+- Mongoose
+- Passport
+- Passport-local
+- Body-Parser
+
+### CDN
+
+- Bootstrap
+- Angular
+- Angular-ui router
 
 ## Development
+
+To get your dev enviromnent set up, download and install MongoDB. 
 
 ### Installing Dependencies
 
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
 ```
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [ROADMAP.md](_ROADMAP.md)
 
 
 ## Contributing
