@@ -18,6 +18,7 @@ angular.module('app')
 
     };
 
+
     var addCompany = function(name) {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
       console.log('inside addcompah', userId.userId);
