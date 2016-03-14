@@ -11,69 +11,45 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       templateUrl: '../views/home.html'
     })
 
-    //declare COMPANIES page state with static templates navbar & companylist    
+    // nested COMPANIES view
+    
     .state('companies', {
       url: '/companies',
       views: {
         '': { 
           templateUrl: '../views/companies.html',
+          controller: 'CompaniesController',
         },
-        'companyList@companies': {
-          templateUrl: '../views/company-list.html',
-          controller: 'CompaniesController'
-        },
-        'navBar@companies': {
-          templateUrl: '../views/navbar.html',
-        },
-        'companyView@companies': {
-          templateUrl: '../views/company-individual.html',
-          controller: 'CompanyController'
+        'company-details@companies': {
+          templateUrl: '../views/company.html'
         }
       }    
     })
 
-     // nested RESUME view with custom controller
+
+    // nested TASK views...
+
     .state('companies.resume', {
-      url: '/resume',
-      templateUrl: '../views/resume.html',
-      controller: function($scope) {
-        $scope.data = 'resume';
-      }
+      templateUrl: '../views/tasks-resume.html'
     })
 
-     // nested COVER LETTER view with custom controller
     .state('companies.cover-letter', {
-      url: '/cover-letter',
-      templateUrl: '../views/cover-letter.html',
-      controller: function($scope) {
-        $scope.data = 'this is our cover letter';
-      }
+      templateUrl: '../views/tasks-coverletter.html'
     })
 
-     // nested RESEARCH view with custom controller
     .state('companies.research', {
-      url: '/research',
-      templateUrl: '../views/research.html',
-      controller: function($scope) {
-        $scope.data = 'this is our research';
-      }
+      templateUrl: '../views/tasks-research.html'
     })
 
-     // nested CONTACTS view with custom controller
     .state('companies.contacts', {
-      url: '/contacts',
-      templateUrl: '../views/contacts.html',
-      controller: function($scope) {
-        $scope.data = 'these are our contacts';
-      }
+      templateUrl: '../views/tasks-contacts.html'
     })
 
-    //nested DATES view with custom controller
     .state('companies.dates', {
-      url: '/dates',
-      templateUrl: '../views/dates.html',
-      controller: 'DateController'
-    }) 
+      templateUrl: '../views/tasks-dates.html',
+      controller: 'CalendarController'
+    })
+    
 
     //LOGIN page
     .state('login', {

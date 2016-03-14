@@ -1,0 +1,91 @@
+<header class="company-details-header"
+        ng-class="{ 'company-undefined': !selection }">
+
+  <span class="company-name">
+    {{ selection.name || "- Please Add a Company -" }}
+  </span>
+  <button class="btn btn-md btn-success" ng-click="apply()"
+          ng-show="!selection.status.applied">
+    Apply!
+  </button>
+  <span class="glyphicon glyphicon-trash" title="Delete"
+        ng-click="deleteCompany( selection._id )"></span>
+
+  <div class="stages-bar">
+    <div class="interview-stage"
+         ng-repeat="(stage, done) in selection.status"
+         ng-class="{ 'completed': done }">
+      {{stage}}
+    </div>
+    <div class="clearfix"></div><!-- clears floats -->
+  </div>
+
+</header>
+
+
+<section class="taskpanel">
+
+  <div class="taskbar"
+       ng-init="tasks = [
+         'resume',
+         'cover-letter',
+         'research',
+         'contacts',
+         'dates'
+       ]">
+
+  	<a ui-sref=".resume" class="buttonframe"
+  	   ng-selected="currentTask === tasks[0]"
+  	   ng-click="currentTask = tasks[0]">
+	    <div class="taskbutton">
+	      <i class="fa fa-file-o"></i>
+	      <div class="caption">{{tasks[0]}}</div>
+	    </div>
+	  </a>
+
+	  <a ui-sref=".cover-letter" class="buttonframe"
+  	   ng-selected="currentTask === tasks[1]"
+  	   ng-click="currentTask = tasks[1]">
+	    <div class="taskbutton">
+	      <i class="fa fa-file-text-o"></i>
+	      <div class="caption">{{tasks[1]}}</div>
+	    </div>
+	  </a>
+
+	  <a id="defaultTask"
+	     ui-sref=".research" class="buttonframe"
+  	   ng-selected="currentTask === tasks[2]"
+  	   ng-click="currentTask = tasks[2]">
+	    <div class="taskbutton">
+	      <i class="fa fa-book"></i>
+	      <div class="caption">{{tasks[2]}}</div>
+	    </div>
+	  </a>
+
+	  <a ui-sref=".contacts" class="buttonframe"
+  	   ng-selected="currentTask === tasks[3]"
+  	   ng-click="currentTask = tasks[3]">
+  	   <div class="taskbutton">
+	       <i class="fa fa-user-plus"></i>
+	       <div class="caption">{{tasks[3]}}</div>
+	     </div>
+	  </a>
+
+	  <a ui-sref=".dates" class="buttonframe"
+  	   ng-selected="currentTask === tasks[4]"
+  	   ng-click="currentTask = tasks[4]">
+  	  <div class="taskbutton">
+		    <i class="fa fa-calendar-o"></i>
+	      <div class="caption">{{tasks[4]}}</div>
+	    </div>
+  	</a>
+
+    <!-- Bootstrap utility to clear floats -->
+	  <div class="clearfix"></div>
+
+  </div> <!-- (end taskbar) -->
+
+  <div ui-view class="task-edit-area">
+  </div>
+  
+</section-->
