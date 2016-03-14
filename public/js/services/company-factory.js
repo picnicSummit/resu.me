@@ -72,12 +72,11 @@ angular.module('app')
       });
     };
 
-    var applied = function() {
+    var applyToCompany = function(id) {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
-      var company = company.name.toString();
       return $http({
         method: 'POST',
-        url: '/api/' + userId.userId + '/companies/' + company + '/applied',
+        url: '/api/' + userId.userId + '/companies/' + id + '/applied',
       });
     };
 
@@ -87,8 +86,7 @@ angular.module('app')
       deleteCompany: deleteCompany,
       setPhoneDate: setPhoneDate,
       setOnsiteDate: setOnsiteDate,
-      applied: applied
-
+      applyToCompany: applyToCompany
     };
 
   }]);

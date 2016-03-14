@@ -276,6 +276,7 @@ iframe {
 
 .company-details-header .company-name {
   margin-right: 14px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
 }

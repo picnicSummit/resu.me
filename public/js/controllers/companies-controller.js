@@ -62,9 +62,20 @@ angular.module('app')
     };
 
     
-    /******************************************
-    // Research if this is still used anywhere
-    ******************************************/
+    $scope.apply = function(id) {
+
+      //console.log(id);
+      CompanyFactory.applyToCompany(id)
+        .then( function (data) {
+          console.log('apply succeeded for co. id:', id );
+          $scope.getAll();
+          console.log('companies data now:', $scope.companies );
+        })
+        .catch( function(error) {
+          console.error(error);
+        });
+    };
+    
 
     // HACK: forcing #defaultTask click event
     // inits nested view AND $scope.currentTask
