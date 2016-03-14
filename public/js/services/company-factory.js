@@ -85,6 +85,7 @@ angular.module('app')
 
     var applied = function() {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      var company = company.name.toString();
       return $http({
         method: 'POST',
         url: '/api/' + userId.userId + '/companies/' + company + '/applied',
@@ -97,7 +98,8 @@ angular.module('app')
       deleteCompany: deleteCompany,
       getCompany: getCompany,
       setPhoneDate: setPhoneDate,
-      setOnsiteDate: setOnsiteDate
+      setOnsiteDate: setOnsiteDate,
+      applied: applied
 
     };
 

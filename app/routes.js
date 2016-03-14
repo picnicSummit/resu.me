@@ -83,7 +83,7 @@ module.exports = function (app) {
   app.post('/api/:user/companies/:company/phone', function(req, res) {
     var id = new ObjectID(req.params.user);
     var company = new ObjectID(req.params.company);
-    console.log(req.body);
+    console.log('------- dates', req.body);
     User
       .findOneAndUpdate(
         {'_id': id, 'companies._id': company},
@@ -178,6 +178,5 @@ module.exports = function (app) {
       }
     })(req, res, next);
   });
-
 
 };

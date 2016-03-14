@@ -75,11 +75,6 @@ angular.module('app')
     };
 
 
-    $scope.appliedToCompany = function() {
-
-    };
-
-
     // HACK: forcing #defaultTask click event
     // inits nested view AND $scope.currentTask
     
