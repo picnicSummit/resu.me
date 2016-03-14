@@ -46,6 +46,7 @@ module.exports = function (app) {
 
   //THIS ADDS A COMPANY TO A USER
   app.post( '/api/:user/companies', function(req, res) {
+    console.log(req.body);
     var id = new ObjectID(req.params.user);
     var newCompany = Company(req.body);
     User

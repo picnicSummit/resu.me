@@ -2,6 +2,7 @@ angular.module('app')
   .factory( 'CompanyFactory', ['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
 
     var getAll = function() {
+      console.log($window.localStorage['job-hunt-token']);
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
 
       return $http({
@@ -15,19 +16,6 @@ angular.module('app')
         console.log( 'CompanyFactory error:', err );
       });
 
-    };
-    var getCompany = function(name) {
-      var userId = JSON.parse($window.localStorage['job-hunt-token']);
-      return $http({
-        method: 'GET',
-        url: '/api/' + userId.userId + '/companies/' + name
-      })
-      .then( function (resp) {
-        $rootScope.$emit('showCompany', resp.data);
-      })
-      .catch( function(err) {
-        console.log( 'CompanyFactory error:', err );
-      });
     };
 
     var addCompany = function(name) {
@@ -59,8 +47,9 @@ angular.module('app')
       });
     };
 
-    var setPhoneDate = function(date, company, type) {
+    var setPhoneDate = function(date, company, type, cb) {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      console.log('hello');
       return $http({
         method: 'POST',
         url: '/api/' + userId.userId + '/companies/' + company + '/phone',
@@ -68,7 +57,7 @@ angular.module('app')
           type: type,
           date: date
         }
-      });
+      }).then(cb());
     };
 
     var setOnsiteDate = function(date, company, type) {
@@ -96,7 +85,6 @@ angular.module('app')
       getAll: getAll,
       addCompany: addCompany,
       deleteCompany: deleteCompany,
-      getCompany: getCompany,
       setPhoneDate: setPhoneDate,
       setOnsiteDate: setOnsiteDate,
       applied: applied

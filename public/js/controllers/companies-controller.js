@@ -3,12 +3,12 @@ angular.module('app')
 
     $scope.companies;
     $scope.selection;
+    $scope.index;
 
     $scope.getAll = function( pendingAdd ) {
 
       CompanyFactory.getAll()
         .then( function(data) {
-          console.log(data);
           $scope.companies = data.companies;
           $scope.selectDefault( pendingAdd );
         })
@@ -17,7 +17,6 @@ angular.module('app')
         });
     };
 
-
     // set selected company (list item)
     $scope.select = function( company ) {
       $scope.selection = company;
@@ -25,10 +24,11 @@ angular.module('app')
 
     // first company selected by default unless a new
     // company has just been added (then select that)
-    $scope.selectDefault = function( addedNewCompany ) {
-      if ( addedNewCompany ) {
-        $scope.selection = $scope.companies[ $scope.companies.length - 1 ];
-        console.log("after add companies:", $scope.companies);
+    $scope.selectDefault = function( companyIndex ) {
+
+      if ( companyIndex ) {
+        $scope.selection = $scope.companies[ companyIndex ];
+        $scope.index = companyIndex;
       } else {
         $scope.selection = $scope.companies[0];
       }
@@ -39,7 +39,7 @@ angular.module('app')
 
       CompanyFactory.addCompany(name)
         .then( function (data) {
-          $scope.getAll( true );
+          $scope.getAll( $scope.companies.length );
         })
         .catch( function(error) {
           console.error(error);
@@ -65,15 +65,6 @@ angular.module('app')
     /******************************************
     // Research if this is still used anywhere
     ******************************************/
-    $scope.getCompany = function(name) {
-      // console.log(name);// -- it worked
-      CompanyFactory.getCompany(name)
-        .catch( function(error) {
-          console.error(error);
-        });
-
-    };
-
 
     // HACK: forcing #defaultTask click event
     // inits nested view AND $scope.currentTask

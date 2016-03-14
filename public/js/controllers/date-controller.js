@@ -1,41 +1,32 @@
 angular.module('app')
-  .controller( 'DateController', ['$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
+  .controller( 'DatesController', ['$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
 
-    $scope.companyId;
 
-    $rootScope.$on('showCompany', function(event, data) {
-      $scope.applied = null;
+    //Whenever the company selection changes, update the dates
+    $scope.$watch('selection', function() {
       $scope.phoneDate = null;
       $scope.onsiteDate = null;
-      if (data) {
-        $scope.companyId = data._id;
+
+      if ($scope.selection.dates && $scope.selection.dates.phone) {
+        var phone = new Date($scope.selection.dates.phone);
+        $scope.phoneDate = phone;
       }
-      if (data && data.status.applied) {
-        $scope.applied = true;
-      }
-      if (data && data.dates) {
-        if (data.dates.phone) {
-          var phone = new Date(data.dates.phone);
-          $scope.phoneDate = phone;
-        }
-        if (data.dates.onsite) {
-          var onsite = new Date(data.dates.onsite);
-          $scope.onsiteDate = onsite;
-        }
+
+      if ($scope.selection.dates && $scope.selection.dates.onsite) {
+        var onsite = new Date($scope.selection.dates.onsite);
+        $scope.onsiteDate = onsite;
       }
     });
 
     $scope.setPhoneDate = function(date) {
-      CompanyFactory.setPhoneDate(date, $scope.companyId, 'phone');
+      CompanyFactory.setPhoneDate(date, $scope.selection._id, 'phone', function() {
+        $scope.getAll($scope.index);
+      });
     };
 
     $scope.setOnsiteDate = function(date) {
-      CompanyFactory.setOnsiteDate(date, $scope.companyId, 'onsite');
-    };
-
-    $scope.applied = function() {
-      console.log('hi');
-      CompanyFactory.applied();
+      CompanyFactory.setOnsiteDate(date, $scope.selection._id, 'onsite');
+      $scope.getAll($scope.index);
     };
 
   }]);

@@ -47,7 +47,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
 
     .state('companies.dates', {
       templateUrl: '../views/tasks-dates.html',
-      controller: 'DateController'
+      controller: 'DatesController'
     })
     
 
