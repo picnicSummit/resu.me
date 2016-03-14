@@ -16,9 +16,9 @@
           <p>To get started, please add the names of a few companies you think you might be interested in applying to...</p>
         </div>
 
-        <ul ng-repeat="company in companies">
+        <ul ng-repeat="company in companies track by $index">
           <li>
-            <div class="list-element" ng-click="select(company)"
+            <div class="list-element" ng-click="selectDefault($index)"
                  ng-selected="selection.name === company.name">
               {{company.name}}
               <span class="glyphicon glyphicon-ok"

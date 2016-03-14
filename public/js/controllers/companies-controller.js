@@ -17,11 +17,6 @@ angular.module('app')
         });
     };
 
-    // set selected company (list item)
-    $scope.select = function( company ) {
-      $scope.selection = company;
-    };
-
     // first company selected by default unless a new
     // company has just been added (then select that)
     $scope.selectDefault = function( companyIndex ) {
@@ -32,6 +27,7 @@ angular.module('app')
       } else {
         $scope.selection = $scope.companies[0];
       }
+      console.log('this is inside select default', companyIndex);
     };
 
 
@@ -40,6 +36,7 @@ angular.module('app')
       CompanyFactory.addCompany(name)
         .then( function (data) {
           $scope.getAll( $scope.companies.length );
+          selectDefaultTask();
         })
         .catch( function(error) {
           console.error(error);
