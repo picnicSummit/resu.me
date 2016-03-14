@@ -36,7 +36,7 @@ angular.module('app')
 
       return $http({
         method: 'POST',
-        url: '/api/' + userId.userId + '/companies/',
+        url: '/api/' + userId.userId + '/companies',
         data: { 
           name: name,
           status: {
@@ -84,7 +84,6 @@ angular.module('app')
     };
 
     var applied = function() {
-      console.log('hi')
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
       return $http({
         method: 'POST',

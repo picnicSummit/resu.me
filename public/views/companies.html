@@ -2,23 +2,27 @@
 <div class="row">
 
     <!-- list of companies -->
-  <div class="col-sm-3">
+  <div class="col-sm-3 debug-col-left">
     <div class="company-selector-panel">
       <div class="listframe">
 
         <div class="add-company-frame">
-          <input type="text" ng-model="name" placeholder="company name" />
-          <button ng-click="addCompany(name); name=''">Add</button>
+          <input type="text" ng-model="name" placeholder="company name"/>
+          <button ng-disabled="!name || name ===''" ng-click="addCompany(name); name=''">Add</button>
           <div class="clearfix"></div><!-- clears floats -->
+        </div>
+
+        <div class="add-prompt" ng-show="companies.length === 0">
+          <p>To get started, please add the names of a few companies you think you might be interested in applying to...</p>
         </div>
 
         <ul ng-repeat="company in companies">
           <li>
             <div class="list-element" ng-click="select(company)"
                  ng-selected="selection.name === company.name">
-              <span class="glyphicon glyphicon-ok"
-                 ng-show="company.applied" title="Applied"></span>
               {{company.name}}
+              <span class="glyphicon glyphicon-ok"
+                 ng-show="company.status.applied" title="Applied"></span>
             </div>
           </li>
         </ul>
@@ -27,12 +31,9 @@
     </div>
   </div>
     
-    <!-- COLUMN VIEW OF ONE COMPANY -->
-    <div class="col-sm-9">
-        <div ui-view="companyView"></div>
-    </div>
+  <!-- selected company details -->
+  <div class="col-sm-9 debug-col-right">
+      <div ui-view="company-details"></div>
+  </div>
 
 </div> 
-
-
-

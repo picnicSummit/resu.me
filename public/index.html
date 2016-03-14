@@ -8,9 +8,9 @@
     <link href="styles/styles.css" rel="stylesheet">
 
     <!--CDN DEPENDENCIES -->
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
   </head>
@@ -19,11 +19,11 @@
 
     <!-- menu bar on EVERY page (maybe replace wi. Bootstrap navbar) -->
     <div class="menu-bar">
-      <span class="branding" ui-sref="home">Job Hunt</span>
+      <span class="branding">Job Hunt</span>
       <nav class="navbar navbar-default pull-right" ng-controller="NavigationController" style="margin-top:10px;">
         <ul class="nav navbar-nav">
-          <li ng-show="isLoggedIn()"><a ui-sref="companies">{{ currentUser() }}</a></li>
-          <li ng-show="isLoggedIn()"><a ui-sref="home" ng-click="logOut()">Log Out</a></li>
+          <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+          <li ng-show="isLoggedIn()"><a ng-click="logOut()">Log Out</a></li>
           <li ng-hide="isLoggedIn()"><a ui-sref="login">Log In</a></li>
         </ul>
       </nav>
@@ -36,16 +36,12 @@
     <!-- standard trick: scripts before closing 'body' tag ensures
       page elements have all loaded before referencing in code -->
     <script src="js/app.js"></script>
+    <script src="js/services/auth-factory.js"></script>
+    <script src="js/controllers/auth-controller.js"></script>
+    <script src="js/controllers/navigation-controller.js"></script>
     <script src="js/services/company-factory.js"></script>
     <script src="js/controllers/companies-controller.js"></script>
     <script src="js/controllers/date-controller.js"></script>
-    <script src="js/controllers/navbar-controller.js"></script>
-    <script src="js/controllers/company-controller.js"></script>
-    <script src="js/controllers/master-controller.js"></script>
-    <script src="js/controllers/auth-controller.js"></script>
-    <script src="js/controllers/navigation-controller.js"></script>
-    <script src="js/services/auth-factory.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
   
   </body>
 </html>

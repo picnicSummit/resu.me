@@ -4,7 +4,11 @@
 
 html {
   font-family: sans-serif;
-  overflow-x: hidden; /* prevents horiz scrollbar when using vh for full-screen image */
+}
+
+body {
+  /* prevents horiz scrollbar when using vh for full-screen image */
+  overflow-x: hidden;
 }
 
 
@@ -67,12 +71,12 @@ html {
   height: 90vh; /* combined with menu = 100% screen height */
 }
 
-.left-column {
-  /*background-color: red;*/ /* for layout testing */
+ /* for layout testing... */
+.debug-col-left {
+  /*background-color: red;*/
 }
-
-.right-column {
-  /*background-color: green;*/ /* for layout testing */
+.debug-col-right {
+  /*background-color: green;*/
 }
 
 .tagline {
@@ -89,7 +93,7 @@ html {
   margin-left: 32px;
 }
 
-.btn {
+.image-area .btn {
   margin: 250px 60px 0 0;
   float: right;
   font-size: 20px;
@@ -191,6 +195,8 @@ iframe {
 }
 
 .add-company-frame button {
+  background-color: rgba(100,100,255,0.4);
+  color: white;
   width: 18%;
   float: left;
   padding:2px;
@@ -200,7 +206,12 @@ iframe {
 }
 
 .add-company-frame button:hover {
-  background-color: rgba(100,100,255,0.4);
+  background-color: rgba(100,100,255,0.8);
+}
+
+.add-company-frame button[disabled] {
+  background-color: transparent;
+  color: gray;
 }
 
 /* remove default <ul> list styles */
@@ -211,7 +222,14 @@ iframe {
 }
 
 .company-selector-panel li {
+  position: relative;
   margin-top: 6px;
+}
+
+.add-prompt {
+  color: rgba(100,100,255,0.6);
+  max-width: 60%;
+  margin: 25% auto;
 }
 
 .list-element {
@@ -225,8 +243,10 @@ iframe {
 }
 
 .list-element .glyphicon {
-  color: green;
-  margin-right: 4px;
+  position: absolute;
+  top: 30%;
+  right: -2%;
+  color: yellowgreen;
 }
 
 .list-element:hover {
@@ -240,26 +260,82 @@ iframe {
 }
 
 
-/*////////////////////////////////////
- CONTINUE NEW UI REVISIONS FROM HERE...
-////////////////////////////////////*/
-
 /********************************
       Company Details View
 *********************************/
 
-.company-name {
+.company-details-header {
+  padding: 20px 0;
   text-align: center;
 }
 
-.stage-bar {
-  width: 90%;
-  margin: 0 auto;
+.company-details-header .company-name {
+  margin-right: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
+.company-details-header .btn {
+  position: relative;
+  top: -2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.company-details-header .glyphicon {
+  font-size: 16px;
+  padding: 6px 6px 4px 4px;
+  color: white;
+  margin-left: 14px;
+  cursor: default;
+  background-color: rgba(100,100,255,0.4);
+  border-radius: 50%;
+}
+
+.company-details-header .glyphicon:hover {
+  background-color: rgba(100,100,255,0.8);
+}
+
+.company-details-header.company-undefined .company-name {
+  text-transform: none;
+  color: rgba(100,100,255,0.6);
+  font-weight: normal;
+}
+
+.company-details-header.company-undefined .glyphicon,
+.company-details-header.company-undefined .btn {
+  display: none;
+}
+
+.stages-bar {
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 16px;
+}
+
+.interview-stage {
+  float: left;
+  width: 20%;
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 12px;
+  text-align: left;
+  background-color: lightblue;
+}
+
+.interview-stage.completed {
+  background-color: lightgreen;
+}
+
+
+/********************************
+      Task Panel Area
+*********************************/
+
 .taskpanel {
-  margin-right: 12px;
-  border: solid 1px black;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 
 .taskbar {
@@ -271,12 +347,12 @@ iframe {
   float: left;
 }
 
-/* show button 'selected' on mouse-over or click */
 .buttonframe:hover {
   background-color: rgba(0,0,255,0.4);
   text-decoration: none;
 }
-.buttonframe:focus {
+
+.buttonframe[selected] {
   background-color: rgba(0,0,255,0.6);
   text-decoration: none;
 }
@@ -330,6 +406,9 @@ iframe {
   height: 1000px;
   width: 100%;
 }
+
+/*************************************
+*************************************/
 
 .loginReg-background {
   background: url("../images/loginBackground.jpg");
@@ -385,10 +464,4 @@ iframe {
 .fontColor {
   color: white;
   font-family: Arial;
-}
-
-.member {
-  color: #000000;
-  font-family: Arial;
-  font-weight: bold;
 }
