@@ -4,7 +4,7 @@
   <span class="company-name">
     {{ selection.name || "- Please Add a Company -" }}
   </span>
-  <button class="btn btn-md btn-success" ng-click="apply()"
+  <button class="btn btn-md btn-success" ng-click="apply(selection._id)"
           ng-show="!selection.status.applied">
     Apply!
   </button>
