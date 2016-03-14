@@ -22,7 +22,7 @@ body {
   padding-left: 3vw;
   padding-right: 4vw;
   background-color: #799dbb;
-  color: white;
+  color: rgba(255,255,255,0.75);
   text-transform: uppercase;
 }
 
@@ -30,6 +30,11 @@ body {
   font-size: 4vh;
   font-weight: bold;
   letter-spacing: 0.6vw;
+  cursor: pointer;
+}
+
+.branding:hover {
+  color: white;
 }
 
 .log-in-out {
