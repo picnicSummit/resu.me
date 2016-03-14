@@ -2,6 +2,7 @@ angular.module('app')
   .factory( 'CompanyFactory', ['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
 
     var getAll = function() {
+      console.log($window.localStorage['job-hunt-token']);
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
 
       return $http({
