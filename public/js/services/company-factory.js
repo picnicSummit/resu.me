@@ -92,21 +92,6 @@ angular.module('app')
       });
     };
 
-    var appliedToCompany = function(id) {
-      console.log('-----inside company Factory -------');
-      var userId = JSON.parse($window.localStorage['job-hunt-token']);
-      var companyName = company.name.toString();
-      return $http({
-        method: 'POST',
-        url: '/api/' + userId.userId + '/companies/' + companyName + '/applied',
-        data: { 
-          status: {
-            applied: true
-          }
-        }
-      });
-    };
-
     return {
       getAll: getAll,
       addCompany: addCompany,
@@ -114,7 +99,6 @@ angular.module('app')
       getCompany: getCompany,
       setPhoneDate: setPhoneDate,
       setOnsiteDate: setOnsiteDate,
-      appliedToCompany: appliedToCompany,
       applied: applied
 
     };

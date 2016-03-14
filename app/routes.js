@@ -179,25 +179,4 @@ module.exports = function (app) {
     })(req, res, next);
   });
 
-// APPLIED TO COMPANY
-  app.post('/api/:user/companies/:company/applied', function(req, res) {
-    console.log('-------req app.post--------'. req);
-    var id = new ObjectID(req.params.user);
-    var company = new ObjectID(req.params.company);
-    console.log('-------app.post applied!!! ------', req.body);
-    User
-      .findOneAndUpdate(
-        {'_id': id, 'companies._id': company},
-        { '$set': { 
-          'companies.$.status.applied': true,
-        } }, 
-        function(error, user) {
-          if (error) {
-            console.log(error);
-          }
-          console.log(user);
-          res.json(user);
-        });
-  }); 
-
 };
