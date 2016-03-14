@@ -239,8 +239,8 @@ iframe {
 
 .list-element {
   display: block;
-  background-color: rgba(100,100,255,0.2);
-  color: rgba(0,0,255,0.65);
+  background-color: #c9d7e3;
+  color: #303e4a;
   text-align: center;
   padding: 5px 0;
   border-radius: 2px;
@@ -255,12 +255,12 @@ iframe {
 }
 
 .list-element:hover {
-  background-color: rgba(0,0,255,0.4);
+  background-color: #799dbb;
   color: white;
 }
 
 .list-element[selected] {
-  background-color: rgba(0,0,255,0.6);
+  background-color: #546d82;
   color: white;
 }
 
