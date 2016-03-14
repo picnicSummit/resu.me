@@ -85,9 +85,25 @@ angular.module('app')
 
     var applied = function() {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      var company = company.name.toString();
       return $http({
         method: 'POST',
         url: '/api/' + userId.userId + '/companies/' + company + '/applied',
+      });
+    };
+
+    var appliedToCompany = function(id) {
+      console.log('-----inside company Factory -------');
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      var companyName = company.name.toString();
+      return $http({
+        method: 'POST',
+        url: '/api/' + userId.userId + '/companies/' + companyName + '/applied',
+        data: { 
+          status: {
+            applied: true
+          }
+        }
       });
     };
 
@@ -97,7 +113,9 @@ angular.module('app')
       deleteCompany: deleteCompany,
       getCompany: getCompany,
       setPhoneDate: setPhoneDate,
-      setOnsiteDate: setOnsiteDate
+      setOnsiteDate: setOnsiteDate,
+      appliedToCompany: appliedToCompany,
+      applied: applied
 
     };
 

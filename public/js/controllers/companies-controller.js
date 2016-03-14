@@ -75,7 +75,17 @@ angular.module('app')
     };
 
 
-    $scope.appliedToCompany = function() {
+    $scope.appliedToCompany = function(company) {
+      
+      CompanyFactory.appliedToCompany(company)
+        .then( function(data) {
+          console.log('-----data------', data);
+          // var companyName = company.name.toString();
+          // $scope.getCompany(companyName);
+        })
+        .catch( function(error) {
+          console.log('------error-----', error);
+        });
 
     };
 
