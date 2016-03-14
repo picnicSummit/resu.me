@@ -412,8 +412,29 @@ iframe {
   width: 100%;
 }
 
+/********************************
+      Date Area
+*********************************/
+.date-button {
+  background-color: rgba(100,100,255,0.4);
+  color: indigo;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.date-button:hover {
+  background-color: rgba(100,100,255,0.6);
+  color: white;
+}
+
+.date-button[disabled] {
+  background-color: transparent;
+  color: gray;
+}
+
 /*************************************
 *************************************/
+
 
 .loginReg-background {
   background: url("../images/loginBackground.jpg");
