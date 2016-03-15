@@ -200,7 +200,7 @@ iframe {
 }
 
 .add-company-frame button {
-  background-color: #bccedd;
+  background-color: #a1bacf;
   color: white;
   width: 18%;
   float: left;
@@ -423,7 +423,7 @@ iframe {
       Date Area
 *********************************/
 .date-button {
-  background-color: #bccedd;
+  background-color: #a1bacf;
   color: #FFFFFF;
   border: 1px solid;
   border-radius: 3px;
@@ -431,26 +431,6 @@ iframe {
 
 .date-button:hover {
   background-color: #799dbb;
-  color: white;
-}
-
-.date-button[disabled] {
-  background-color: transparent;
-  color: gray;
-}
-
-/********************************
-      Date Area
-*********************************/
-.date-button {
-  background-color: rgba(100,100,255,0.4);
-  color: indigo;
-  border: 1px solid;
-  border-radius: 3px;
-}
-
-.date-button:hover {
-  background-color: rgba(100,100,255,0.6);
   color: white;
 }
 
