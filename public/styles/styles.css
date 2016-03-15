@@ -184,10 +184,10 @@ iframe {
 }
 
 .add-company-frame {
-  color: indigo;
+  color: #303e4a;
   margin: 12px;
   padding: 2px;
-  border: 1px solid rgba(100,100,255,0.4);
+  border: 1px solid #86a6c1;
   border-radius: 3px;
 }
 
@@ -200,7 +200,7 @@ iframe {
 }
 
 .add-company-frame button {
-  background-color: rgba(100,100,255,0.4);
+  background-color: #a1bacf;
   color: white;
   width: 18%;
   float: left;
@@ -211,7 +211,7 @@ iframe {
 }
 
 .add-company-frame button:hover {
-  background-color: rgba(100,100,255,0.8);
+  background-color: #799dbb;
 }
 
 .add-company-frame button[disabled] {
@@ -239,8 +239,8 @@ iframe {
 
 .list-element {
   display: block;
-  background-color: rgba(100,100,255,0.2);
-  color: rgba(0,0,255,0.65);
+  background-color: #c9d7e3;
+  color: #303e4a;
   text-align: center;
   padding: 5px 0;
   border-radius: 2px;
@@ -255,12 +255,12 @@ iframe {
 }
 
 .list-element:hover {
-  background-color: rgba(0,0,255,0.4);
+  background-color: #799dbb;
   color: white;
 }
 
 .list-element[selected] {
-  background-color: rgba(0,0,255,0.6);
+  background-color: #546d82;
   color: white;
 }
 
@@ -294,12 +294,12 @@ iframe {
   color: white;
   margin-left: 14px;
   cursor: default;
-  background-color: rgba(100,100,255,0.4);
+  background-color: #bccedd;
   border-radius: 50%;
 }
 
 .company-details-header .glyphicon:hover {
-  background-color: rgba(100,100,255,0.8);
+  background-color: #6c8da8;
 }
 
 .company-details-header.company-undefined .company-name {
@@ -327,11 +327,11 @@ iframe {
   padding-top: 10px;
   padding-left: 12px;
   text-align: left;
-  background-color: lightblue;
+  background-color: #c5e3ed;
 }
 
 .interview-stage.completed {
-  background-color: lightgreen;
+  background-color: #9bef9b;
 }
 
 
@@ -354,18 +354,18 @@ iframe {
 }
 
 .buttonframe:hover {
-  background-color: rgba(0,0,255,0.4);
+  background-color: #6c8da8;
   text-decoration: none;
 }
 
 .buttonframe[selected] {
-  background-color: rgba(0,0,255,0.6);
+  background-color: #546d82;
   text-decoration: none;
 }
 
 .taskbutton {
   background-color: rgba(255,255,255, 0.65);
-  color: rgba(0,0,255,0.5);
+  color: #546d82;
   width: 100px;
   height: 100px;
   border-radius: 5px;
@@ -374,7 +374,7 @@ iframe {
 }
 
 .taskbutton .caption {
-  color: rgba(0,0,255,0.6);
+  color: #242f38;
   font-size: 14px;
   transform: translate( 0%,10%);
 }
@@ -423,34 +423,14 @@ iframe {
       Date Area
 *********************************/
 .date-button {
-  background-color: rgba(100,100,255,0.4);
-  color: indigo;
+  background-color: #a1bacf;
+  color: #FFFFFF;
   border: 1px solid;
   border-radius: 3px;
 }
 
 .date-button:hover {
-  background-color: rgba(100,100,255,0.6);
-  color: white;
-}
-
-.date-button[disabled] {
-  background-color: transparent;
-  color: gray;
-}
-
-/********************************
-      Date Area
-*********************************/
-.date-button {
-  background-color: rgba(100,100,255,0.4);
-  color: indigo;
-  border: 1px solid;
-  border-radius: 3px;
-}
-
-.date-button:hover {
-  background-color: rgba(100,100,255,0.6);
+  background-color: #799dbb;
   color: white;
 }
 
@@ -520,7 +500,12 @@ iframe {
 }
 
 .memberRegAndLog {
-  color: #000000;
+  color: #cccccc;
   font-family: Arial;
   font-weight: bold;
 }
+
+.memberRegAndLog:hover {
+  color: #191919;
+}
+

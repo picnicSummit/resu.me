@@ -24,26 +24,6 @@ module.exports = function (app) {
       });
   });
 
-  //THIS GETS ONE COMPANY
-  app.get('/api/:user/companies/:company', function(req, res) {
-    var id = new ObjectID(req.params.user);
-    var company = req.params.company;
-    console.log(company);
-    User
-      .findOne({ _id: id })
-      .exec(function(error, user) {
-        if ( error ) {
-          res.json(error);
-        } else {
-          for (var i = 0; i < user.companies.length; i++) {
-            if (user.companies[i].name === company) {
-              res.json(user.companies[i]);
-            }
-          }
-        }      
-      });
-  });
-
   //THIS ADDS A COMPANY TO A USER
   app.post( '/api/:user/companies', function(req, res) {
     console.log(req.body);
