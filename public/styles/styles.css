@@ -408,9 +408,35 @@ iframe {
   width: 100%;
 }
 
+.task-edit-area {
+  height: 1000px;
+  width: 100%;
+  padding: 16px;
+}
+
 .task-edit-area iframe {
   height: 1000px;
   width: 100%;
+  padding: 0px;
+}
+/********************************
+      Date Area
+*********************************/
+.date-button {
+  background-color: rgba(100,100,255,0.4);
+  color: indigo;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.date-button:hover {
+  background-color: rgba(100,100,255,0.6);
+  color: white;
+}
+
+.date-button[disabled] {
+  background-color: transparent;
+  color: gray;
 }
 
 /********************************
