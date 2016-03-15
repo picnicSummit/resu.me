@@ -2,7 +2,7 @@
 <div class="row">
 
     <!-- list of companies -->
-  <div class="col-sm-3 debug-col-left">
+  <div class="col-sm-2 debug-col-left">
     <div class="company-selector-panel">
       <div class="listframe">
 
@@ -18,7 +18,7 @@
 
         <ul ng-repeat="company in companies track by $index">
           <li>
-            <div class="list-element" ng-click="selectDefault($index)"
+            <div class="list-element" ng-click="select($index)"
                  ng-selected="selection.name === company.name">
               {{company.name}}
               <span class="glyphicon glyphicon-ok"
@@ -32,7 +32,7 @@
   </div>
     
   <!-- selected company details -->
-  <div class="col-sm-9 debug-col-right">
+  <div class="col-sm-10 debug-col-right">
       <div ui-view="company-details"></div>
   </div>
 

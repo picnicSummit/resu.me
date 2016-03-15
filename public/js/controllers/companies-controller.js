@@ -5,29 +5,25 @@ angular.module('app')
     $scope.selection;
     $scope.index;
 
-    $scope.getAll = function( pendingAdd ) {
+    $scope.getAll = function( newSelectionIndex ) {
 
       CompanyFactory.getAll()
         .then( function(data) {
           $scope.companies = data.companies;
-          $scope.selectDefault( pendingAdd );
+
+          // first company selected by default unless a new
+          // company has just been added (then select that)
+          $scope.select( newSelectionIndex );
         })
         .catch( function(error) {
           console.error(error);
         });
     };
 
-    // first company selected by default unless a new
-    // company has just been added (then select that)
-    $scope.selectDefault = function( companyIndex ) {
-
-      if ( companyIndex ) {
-        $scope.selection = $scope.companies[ companyIndex ];
-        $scope.index = companyIndex;
-      } else {
-        $scope.selection = $scope.companies[0];
-      }
-      console.log('this is inside select default', companyIndex);
+    
+    $scope.select = function( companyIndex ) {
+      $scope.selection = $scope.companies[ companyIndex ];
+      $scope.index = companyIndex; // used by DateController
     };
 
 
@@ -51,22 +47,22 @@ angular.module('app')
       }
       //console.log(id);
       CompanyFactory.deleteCompany(id)
+        .then( function (data) {
+          var newSelection = $scope.index - 1 < 0 ? 0 : $scope.index - 1;
+          $scope.getAll( newSelection );
+        })
         .catch( function(error) {
           console.error(error);
         });
-        
-      $scope.getAll();
     };
 
     
-    $scope.apply = function(id) {
+    $scope.apply = function( id ) {
 
       //console.log(id);
       CompanyFactory.applyToCompany(id)
         .then( function (data) {
-          console.log('apply succeeded for co. id:', id );
-          $scope.getAll();
-          console.log('companies data now:', $scope.companies );
+          $scope.getAll( $scope.index );
         })
         .catch( function(error) {
           console.error(error);
@@ -84,7 +80,7 @@ angular.module('app')
       }, 100);
     };
 
-    $scope.getAll();
+    $scope.getAll(0);
     selectDefaultTask();
 
   }]);
