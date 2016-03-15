@@ -500,7 +500,12 @@ iframe {
 }
 
 .memberRegAndLog {
-  color: #000000;
+  color: #cccccc;
   font-family: Arial;
   font-weight: bold;
 }
+
+.memberRegAndLog:hover {
+  color: #191919;
+}
+
