@@ -68,9 +68,9 @@ angular.module('app')
         });
     };
     
-    $scope.userFiles = {};
     
-    $scope.submitResume = function(htmlVariable) {
+    $scope.submitDoc = function(htmlVariable) {
+      $scope.userFiles = {};
    
       $scope.userFiles.coverLetter = htmlVariable;
 
