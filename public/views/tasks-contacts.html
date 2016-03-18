@@ -1,3 +1,19 @@
 <header>
-  <div class="title">Contacts...</div>
+  <div class="title" ng-controller="ContactsController">Contacts...
+    <form class="contacts">
+        <input type="text" placeholder="name"> </input>
+        <!-- <input type="text" placeholder="company"></input> -->
+        <input type="text" placeholder="email" ng-model="newContact.name"></input>
+        <input type="text" placeholder="phone number" ng-model="newContact.email"></input>
+        <input type="text" placeholder="social media" ng-model="newContact.socialmedia"></input>
+        <select name="title" list="job title">
+          <option value="technicalRecruiter">Technical Recruiter</option>
+          <option value="Recruiter">Recruiter</option>
+          <option value="CTO">CTO</option>
+          <option value="Developer">Developer</option>
+        </select>
+        <button class="submit contact" ng-click="addContact()">Add to contacts</button>
+    </form>
+  </div>
 </header>
+
