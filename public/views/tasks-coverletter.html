@@ -1,3 +1,6 @@
 <header>
-  <div class="title">Cover Letter...</div>
+  <div text-angular id="cover-letter-input" ng-model="htmlVariable"></div>
+  <button class="btn btn-default" ng-click="submitDoc(htmlVariable)">Submit</button>
+  <div class="hacky" ng-model="cover.coverLetter">{{ htmlVariable }}</div>
+  
 </header>

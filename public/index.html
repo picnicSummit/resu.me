@@ -3,8 +3,9 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Job Hunt</title>
+    <title>Resu.me</title>
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.css">
     <link href="styles/styles.css" rel="stylesheet">
 
     <!--CDN DEPENDENCIES -->
@@ -13,13 +14,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngularSetup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js"></script>
   </head>
   
   <body ng-app='app'>
 
     <!-- menu bar on EVERY page (maybe replace wi. Bootstrap navbar) -->
     <div class="menu-bar">
-      <span class="branding" ui-sref="home">Job Hunt</span>
+      <span class="branding" ui-sref="home">Resu.me</span>
       <nav class="navbar navbar-default pull-right" ng-controller="NavigationController" style="margin-top:10px;">
         <ul class="nav navbar-nav">
           <li ng-show="isLoggedIn()"><a ui-sref="companies">{{ currentUser() }}</a></li>
