@@ -14,3 +14,9 @@
 <div class="taskdoc-container">
   <iframe src="https://docs.google.com/document/d/1WfrJNORxN5Vt746eBfMhuGoAn1UxCdeIBk3JywMuYZg/pub?embedded=true" frameBorder="0"></iframe>
 </div>
+<div class="container">
+  <div text-angular id="cover-letter-input" ng-model="htmlVariable"></div>
+  <button class="btn btn-default" ng-click="submitResume(htmlVariable)">Submit</button>
+  <div class="hacky" ng-model="cover.coverLetter">{{ htmlVariable }}</div>
+  
+</div>

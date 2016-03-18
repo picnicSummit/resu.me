@@ -5,6 +5,10 @@ angular.module('app')
     $scope.selection;
     $scope.index;
 
+    // object to capture user file inputs
+    $scope.userFiles = {};
+    $scope.userFiles.research = [];
+
     $scope.getAll = function( newSelectionIndex ) {
 
       CompanyFactory.getAll()
@@ -69,12 +73,31 @@ angular.module('app')
     };
     
     
-    $scope.submitDoc = function(htmlVariable) {
-      $scope.userFiles = {};
+    $scope.submitCoverLetter = function(htmlVariable) {
    
       $scope.userFiles.coverLetter = htmlVariable;
 
       console.log('htmlVariable', htmlVariable);
+    };
+
+    $scope.submitResume = function(htmlVariable) {
+
+      $scope.userFiles.resume = htmlVariable;
+
+      console.log('userFiles', $scope.userFiles);
+
+    };
+
+    $scope.submitResearch = function(item) {
+
+      console.log('research item', item);
+
+      $scope.userFiles.research.push(item);
+      console.log('research array', $scope.userFiles.research);
+
+      // TODO: Reset the input to show the placeholder on click
+      // $scope.item = 'Enter a URL';
+
     };
 
     // HACK: forcing #defaultTask click event
