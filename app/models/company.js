@@ -14,7 +14,7 @@ var companySchema = new Schema({
   dates: {
     phone: Date,
     onsite: Date
-  },
+  }
 
 });
 
