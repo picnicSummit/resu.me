@@ -55,7 +55,6 @@ angular.module('app')
           console.error(error);
         });
     };
-
     
     $scope.apply = function( id ) {
 
@@ -69,6 +68,14 @@ angular.module('app')
         });
     };
     
+    $scope.userFiles = {};
+    
+    $scope.submitResume = function(htmlVariable) {
+   
+      $scope.userFiles.coverLetter = htmlVariable;
+
+      console.log('htmlVariable', htmlVariable);
+    };
 
     // HACK: forcing #defaultTask click event
     // inits nested view AND $scope.currentTask
