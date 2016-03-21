@@ -42,7 +42,8 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     })
 
     .state('companies.contacts', {
-      templateUrl: '../views/tasks-contacts.html'
+      templateUrl: '../views/tasks-contacts.html',
+      controller: 'ContactsController'
     })
 
     .state('companies.dates', {

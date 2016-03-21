@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var Company = require( './models/company' );
 var User = require( './models/user' );
+var Contacts = require('./models/contacts');
 var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function (app) {
@@ -61,6 +62,7 @@ module.exports = function (app) {
   });
 
   //ADDING DATES TO COMPANY
+  //add phone interview dates
   app.post('/api/:user/companies/:company/phone', function(req, res) {
     var id = new ObjectID(req.params.user);
     var company = new ObjectID(req.params.company);
@@ -81,6 +83,7 @@ module.exports = function (app) {
         });
   }); 
 
+  //add onsite interview dates
   app.post('/api/:user/companies/:company/onsite', function(req, res) {
     var id = new ObjectID(req.params.user);
     var company = new ObjectID(req.params.company);
@@ -101,6 +104,32 @@ module.exports = function (app) {
         });
   }); 
 
+//ADD CONTACTS TO COMPANY
+  app.post('/api/:user/companies/:company/contacts', function(req, res) {
+    var id = new ObjectID(req.params.user);
+    console.log(req.body);
+    var company = new ObjectID(req.params.company);
+    User
+      .findOneAndUpdate(
+        {'_id': id, 'companies._id': company},
+        {'$set': {
+          'contacts.$.name': req.body.name,
+          'contacts.$.email': req.body.email,
+          'contacts.$.phoneNumber': req.body.phoneNumber,
+          'contacts.$.socialMedia': req.body.socialMedia,
+          'contacts.$.title': req.body.title,
+          'contacts.$.website': req.body.website
+        } }, 
+        function(error, user) {
+          if (error) {
+            console.log(error);
+          }
+          console.log(user);
+          res.json(user);
+        });  
+  });
+
+//update companies
   app.post('/api/:user/companies/:company/applied', function(req, res) {
     var id = new ObjectID(req.params.user);
     var company = new ObjectID(req.params.company);
