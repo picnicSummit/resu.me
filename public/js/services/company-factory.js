@@ -63,6 +63,7 @@ angular.module('app')
 
     var setOnsiteDate = function(date, company, type) {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      console.log('inside of set onsite date');
       return $http({
         method: 'POST',
         url: '/api/' + userId.userId + '/companies/' + company + '/onsite',
@@ -70,6 +71,17 @@ angular.module('app')
           type: type,
           date: date
         }
+      });
+    };
+
+    // ON LINE 82 COMPANY IS UNDEFINED
+    var createContact = function(contacts, company) {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      console.log('inside factory');
+      return $http({
+        method: 'POST',
+        url: '/api/' + userId.userId + '/companies/' + company + '/contacts',
+        data: { contacts }
       });
     };
 
@@ -87,7 +99,8 @@ angular.module('app')
       deleteCompany: deleteCompany,
       setPhoneDate: setPhoneDate,
       setOnsiteDate: setOnsiteDate,
-      applyToCompany: applyToCompany
+      applyToCompany: applyToCompany,
+      createContact: createContact
     };
 
   }]);
