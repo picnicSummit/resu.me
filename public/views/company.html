@@ -8,8 +8,9 @@
           ng-show="!selection.status.applied">
     Apply!
   </button>
-  <span class="glyphicon glyphicon-trash" title="Delete"
-        ng-click="deleteCompany( selection._id )"></span>
+ <!--  <span class="glyphicon glyphicon-trash" title="Delete"
+        ng-click="deleteCompany( selection._id )"></span> -->
+    <button class="btn btn-md default delete-company" id="remove-button" ng-click="deleteCompany( selection._id )">Remove Company</button>
 
   <div class="stages-bar">
     <div class="interview-stage"

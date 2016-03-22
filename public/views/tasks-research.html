@@ -1,11 +1,11 @@
 <header>
   <div class="container">
-    <div class="title">Research...</div>
+    <div class="title">Company Research</div>
   
   <!-- Input should add research items to the userFiles research array -->
   <!-- research items should show in list format -->
     <input class="research-items" ng-model="item" placeholder="Enter a URL">
-    <button class="btn btn-default" ng-click="submitResearch(item)">Submit</button>
+    <button class="buttonDefault" ng-click="submitResearch(item)">Submit</button>
 
     <ul class="research-list">
       <a href="{{item}}"><li ng-repeat="item in userFiles.research">{{ item }}</li></a>
