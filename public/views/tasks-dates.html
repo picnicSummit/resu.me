@@ -1,13 +1,18 @@
-<form>
+
+<div class="dates"> 
+<form class="phoneInterview">
 <label for="exampleInput">Phone Interview:</label>
    <input type="datetime-local" ng-model="phoneDate"
        placeholder="MM-dd"/>
     <button ng-click="setPhoneDate(phoneDate)" class="date-button" ng-disabled="!phoneDate">Set Date</button><span class="glyphicon glyphicon-ok" ng-show="phoneCheck" style="color:green" title="Applied"></span>
 </form>
-<form>
+
+<form class="onsiteInterview">
    <label for="exampleInput">Onsite Interview:</label>
    <input type="datetime-local" ng-model="onsiteDate"
        placeholder="MM-dd"/ >
     <button class="date-button" ng-click="setOnsiteDate(onsiteDate)" type="button"  ng-disabled="!onsiteDate">Set Date</button><span class="glyphicon glyphicon-ok" ng-show="onsiteCheck" style="color:green" title="Applied" ></span>
 </form>
-</form>
+
+</div>
+

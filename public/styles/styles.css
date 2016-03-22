@@ -10,25 +10,27 @@ body {
   /* prevents horiz scrollbar when using vh for full-screen image */
   overflow-x: hidden;
 }
-
-
 /********************************
+
            Menu Bar
 *********************************/
 
 .menu-bar {
   height: 10vh;
   line-height: 10vh; /* vert. center text hack */
+  font-family: 'Raleway', sans-serif;
   padding-left: 3vw;
   padding-right: 4vw;
   background-color: #799dbb;
   color: rgba(255,255,255,0.75);
+  color: ;
   text-transform: uppercase;
+  /*border-color: black;*/
+  /*border-style: solid;*/
 }
 
 .branding {
-  font-size: 4vh;
-  font-weight: bold;
+  font-size: 6vh;
   letter-spacing: 0.6vw;
   cursor: pointer;
 }
@@ -86,6 +88,7 @@ body {
 
 .tagline {
   color: #3c4e5d;
+  font-family: 'Fira Sans', sans-serif;
   font-style: italic;
   font-weight: bold;
   font-size: 20px;
@@ -95,12 +98,14 @@ body {
 }
 
 .tagline .line2 {
+  font-family: inherit;
   margin-left: 32px;
 }
 
 .image-area .btn {
   margin: 250px 60px 0 0;
   float: right;
+  font-family: inherit;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 1.25px;
@@ -112,6 +117,7 @@ body {
   color: #3c4e5d;
   margin: 32px auto 0 auto;
   width: 200px;
+  font-family: inherit;
   font-size: 14px;
   text-align: center;
   border: 1px solid;
@@ -241,6 +247,7 @@ iframe {
   display: block;
   background-color: #c9d7e3;
   color: #303e4a;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   padding: 5px 0;
   border-radius: 2px;
@@ -276,6 +283,7 @@ iframe {
 
 .company-details-header .company-name {
   margin-right: 14px;
+  font-family: 'Raleway', sans-serif;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
@@ -287,8 +295,17 @@ iframe {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+ #remove-button {
+  position: relative;
+  top: -2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: white;
+  background-color: #ff4d4d;
+ }
 
 .company-details-header .glyphicon {
+  font-family: 'Raleway', sans-serif;
   font-size: 16px;
   padding: 6px 6px 4px 4px;
   color: white;
@@ -327,6 +344,7 @@ iframe {
   padding-top: 10px;
   padding-left: 12px;
   text-align: left;
+  font-family: 'Raleway', sans-serif;
   background-color: #c5e3ed;
 }
 
@@ -375,6 +393,7 @@ iframe {
 
 .taskbutton .caption {
   color: #242f38;
+  font-family: 'Raleway', sans-serif;
   font-size: 14px;
   transform: translate( 0%,10%);
 }
@@ -419,25 +438,6 @@ iframe {
   width: 100%;
   padding: 0px;
 }
-/********************************
-      Date Area
-*********************************/
-.date-button {
-  background-color: #a1bacf;
-  color: #FFFFFF;
-  border: 1px solid;
-  border-radius: 3px;
-}
-
-.date-button:hover {
-  background-color: #799dbb;
-  color: white;
-}
-
-.date-button[disabled] {
-  background-color: transparent;
-  color: gray;
-}
 
 /*************************************
 *************************************/
@@ -452,6 +452,7 @@ iframe {
 }
 
 .loginRegBox {
+  font-family: 'Raleway', sans-serif;
   width: 320px;
   padding: 20px;
   margin: 0 auto;
@@ -484,6 +485,7 @@ iframe {
 }
  
 .regAndLog {
+  font-family: 'Raleway', sans-serif;
   text-decoration-color: white;
   width: 250px;
   height: 35px;
@@ -496,12 +498,12 @@ iframe {
 
 .fontColor {
   color: white;
-  font-family: Arial;
+  font-family: 'Raleway', sans-serif;
 }
 
 .memberRegAndLog {
   color: #cccccc;
-  font-family: Arial;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
 }
 
@@ -509,3 +511,131 @@ iframe {
   color: #191919;
 }
 
+/*************************************
+    Contacts view 
+**************************************/
+.contacts {
+  font-family: 'Raleway', sans-serif;
+  border-radius: 5px;
+
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+
+.contactLabels {
+  float: left;
+  font-size: 16px;
+}
+
+.contacts form{
+  font-family: 'Raleway', sans-serif;
+}
+
+input[type=text], select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.addContact{
+  width: 50%;
+  font-family:'Raleway', sans-serif;
+  /*change*/
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px, 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addContact:hover{
+  background-color: #45a049;
+}
+
+/********************************
+      Date View
+*********************************/
+.dates{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+
+input[type=datetime-local] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.date-button {
+  background-color: #4CAF50;
+  border-radius: 3px;
+  color: white;
+}
+
+.date-button:hover {
+ 
+  background-color: #45a049;
+
+}
+
+.date-button[disabled] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px, 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*************************************
+    Research View
+**************************************/
+
+.container {
+  font-family: 'Raleway', sans-serif;
+  border-radius: 5px;
+
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+
+.research-items {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttonDefault {
+  width: 50%;
+  font-family:'Raleway', sans-serif;
+  /*change*/
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px, 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonDefault:hover {
+  background-color: #45a049;
+}

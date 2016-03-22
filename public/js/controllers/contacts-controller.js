@@ -24,7 +24,7 @@ angular.module('app')
     this.email = $scope.email;
     this.phoneNumber = $scope.phoneNumber;
     this.socialMedia = $scope.socialMedia;
-    // this.title = $scope.title,
+    this.title = $scope.title;
     // this.website = $scope.website
     for (var key in $scope.contacts) {
       $scope.contactsArray.push($scope.contacts[key]);
