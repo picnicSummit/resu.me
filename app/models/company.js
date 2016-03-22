@@ -19,7 +19,7 @@ var companySchema = new Schema({
   },
   resume: String,
   coverLetter: String,
-  research: String,
+  research: [String],
   contacts: [ContactsSchema]
 });
 

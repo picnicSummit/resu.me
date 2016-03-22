@@ -6,10 +6,9 @@
   <!-- research items should show in list format -->
     <input class="research-items" ng-model="item" placeholder="Enter a URL">
     <button class="btn btn-default" ng-click="submitResearch(item)">Submit</button>
-
-    <ul class="research-list">
-      <a href="{{item}}"><li ng-repeat="item in userFiles.research">{{ item }}</li></a>
-    </ul>
+    
+    <div class="research-list">
+      <span ng-repeat="item in userFiles.research">{{ item }}<br /></span>
   </div>
 
 </header>

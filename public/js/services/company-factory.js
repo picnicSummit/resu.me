@@ -10,6 +10,7 @@ angular.module('app')
         url: '/api/' + userId.userId + '/companies/'
       })
       .then( function (resp) {
+        console.log('resp.data from getAll factory', resp.data);
         return resp.data;
       })
       .catch( function(err) {
@@ -85,6 +86,22 @@ angular.module('app')
       });
     };
 
+    // adding research
+    var addResearch = function(item, company) {
+      var userId = JSON.parse($window.localStorage['job-hunt-token']);
+      console.log('inside addResearch!', item);
+      return $http({
+        method: 'POST',
+        url: '/api/' + userId.userId + '/companies/' + company + '/research',
+        data: [item]
+      })
+      .then(function() {
+        console.log('item from research factory', item);
+        return item;
+        // $scope.userFiles.research.push(item);
+      });
+    };
+
     var applyToCompany = function(id) {
       var userId = JSON.parse($window.localStorage['job-hunt-token']);
       return $http({
@@ -100,7 +117,8 @@ angular.module('app')
       setPhoneDate: setPhoneDate,
       setOnsiteDate: setOnsiteDate,
       applyToCompany: applyToCompany,
-      createContact: createContact
+      createContact: createContact,
+      addResearch: addResearch
     };
 
   }]);

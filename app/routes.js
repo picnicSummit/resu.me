@@ -129,6 +129,29 @@ module.exports = function (app) {
         });  
   });
 
+  // add research to a company
+  app.post('/api/:user/companies/:company/research', function(req, res) {
+    var id = new ObjectID(req.params.user);
+    var company = new ObjectID(req.params.company);
+    console.log('------- research', req.params.company);
+    User
+      .findOneAndUpdate(
+        {'_id': id, 'companies._id': company},
+        { '$set': { 
+          'companies.$.research': req.body.research,
+          'companies.$.research': []
+          // 'companies.$.dates.phone': req.body.date,
+          // 'companies.$.status.phone': true 
+        }, }, 
+        function(error, user) {
+          if (error) {
+            console.log(error);
+          }
+          console.log(user);
+          res.json(user);
+        });
+  }); 
+
 //update companies
   app.post('/api/:user/companies/:company/applied', function(req, res) {
     var id = new ObjectID(req.params.user);

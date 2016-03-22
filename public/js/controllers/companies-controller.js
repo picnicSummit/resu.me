@@ -10,20 +10,40 @@ angular.module('app')
     $scope.userFiles.research = [];
 
     $scope.getAll = function( newSelectionIndex ) {
-
+      $scope.currentIndex = newSelectionIndex;
       CompanyFactory.getAll()
         .then( function(data) {
+          // $scope.userFiles.research = $scope.companies[newSelectionIndex].research;
           $scope.companies = data.companies;
+          // console.log('companies', $scope.companies[newSelectionIndex]);
+          // console.log('$scope.companies', $scope.companies);
+          // console.log('research', $scope.companies[0].research);
+          // $scope.userFiles.research = $scope.companies[newSelectionIndex].research;
+          // console.log('research from getAll', $scope.userFiles.research);
+
+          console.log("too damn many consoleLogs!!!!!!!!", newSelectionIndex);
+          for (var i = 0; i < $scope.companies[newSelectionIndex].research; i++) {
+            $scope.userFiles.research.push($scope.companies[newSelectionIndex].research[i]);
+          }
+          console.log('userFiles.research from $scope.getAll', $scope.userFiles.research);
 
           // first company selected by default unless a new
           // company has just been added (then select that)
           $scope.select( newSelectionIndex );
         })
+        // .then( function() {
+        //   for (var i = 0; i < $scope.companies[newSelectionIndex].research; i++) {
+        //     console.log("too damn many consoleLogs!!!!!!!!", $scope.companies[newSelectionIndex].research);
+        //     $scope.userFiles.research.push($scope.companies[newSelectionIndex].research[i]);
+        //   }
+        //   console.log('userFiles.research from $scope.getAll', $scope.userFiles.research);
+        // })
         .catch( function(error) {
           console.error(error);
         });
     };
 
+    
     
     $scope.select = function( companyIndex ) {
       $scope.selection = $scope.companies[ companyIndex ];
@@ -90,11 +110,17 @@ angular.module('app')
 
     $scope.submitResearch = function(item) {
 
-      console.log('research item', item);
 
+
+      console.log('userId', $scope.selection._id);
+
+      CompanyFactory.addResearch(item, $scope.selection.name);
+      // .then( function() {
       $scope.userFiles.research.push(item);
-      console.log('research array', $scope.userFiles.research);
-
+      //   console.log('research from submitResearch', $scope.userFiles.research);
+      // });
+      
+      CompanyFactory.getAll();
       // TODO: Reset the input to show the placeholder on click
       // $scope.item = 'Enter a URL';
 
